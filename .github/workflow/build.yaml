@@ -9,26 +9,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
       - name: Get Python 3.12
         uses: actions/setup-python@v5
         with:
           python-version: '3.8'
           cache: 'pip'
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Update README file
-        env:
-          DUMMYVAR: ${{ secrets.USER_NAME }}
         run: python update.py
       - name: Commit
         run: |-
-          git add .
-          git diff
           git config --global user.email "github-actions-bot@raintrout.github.io"
           git config --global user.name "Raintrout/GitHub-Actions-Bot"
-          git commit -m "Updated README" -a || echo "No changes to commit"
-          git push
+          git add .
+          git diff --quiet && git diff --staged --quiet || git commit -m "[generated]: Update latest blog posts in `README.md` file"          
+          git push origin main
