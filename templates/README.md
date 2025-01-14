@@ -1,26 +1,6 @@
-## Hi there 👋
-- 🔭 I’m currently working on LLMs for information extraction and analysis
-- 📷 Previously I did a lot of computer vision work in manufacturing and yard environments
-
-### Outside work, you can find me 
-- 🥾⛰️⛺️
-- 🎴🎲🎮
-- 📷🌲🌄
-- 🤺⚔️
-
-<!--TIME-->
-
-<!--
-**Raintrout/raintrout** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<a href="https://github.com/Raintrout">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Raintrout/Raintrout/main/img/dark.svg">
+    <img alt="Raintrout's GitHub Profile README" src="https://raw.githubusercontent.com/Raintrout/Raintrout/main/img/light.svg">
+  </picture>
+</a>

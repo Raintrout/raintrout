@@ -27,5 +27,5 @@ jobs:
           git config --global user.email "github-actions-bot@raintrout.github.io"
           git config --global user.name "Raintrout/GitHub-Actions-Bot"
           git add .
-          git diff --quiet && git diff --staged --quiet || git commit -m "[generated]: Update latest blog posts in `README.md` file"          
+          git diff --quiet && git diff --staged --quiet || git commit -m "[generated]: Update `README.md` file"          
           git push origin main
