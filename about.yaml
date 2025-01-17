@@ -1,8 +1,8 @@
 steven@raintrout:
   OS: 
-    - Windows 10
-    - Android 15
+    - OS X 14
     - Linux
+    - Android 15
   Uptime: 27 years
   Host: Synthpop.ai
   Kernel: Software Engineer
@@ -18,21 +18,22 @@ steven@raintrout:
       - Markdown
       - JSON
       - YAML
-  Hobbies:
-    Outdoor:
-      - Hiking
-      - Backpacking
-      - Photography
-    Physical:
-      - Running
-      - Fencing
-    Mental:
-      - Astrophotography
-      - MtG
-      - DnD
 Work:
   Current: information extraction and analysis for medical workflows
   Previous: edge computer vision and ml for manufacturing and yard
+Hobbies:
+  Outdoors:
+    - Backpacking
+    - Photography
+    - Hiking
+  Games:
+    - MtG
+    - DnD
+    - Misc
+  Other:
+    - Running
+    - HEMA
+    - Astro
 
 Stats:
   Coming Soon: NULL

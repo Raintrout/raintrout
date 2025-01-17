@@ -4,30 +4,20 @@
 ${style}
 </style>
 <rect width="985px" height="530px" fill="${background_color}" rx="15"/>
-
+<image 
+  href="https://astropixels.com/diffusenebulae/images/M42-02-TMAPw.jpg"
+  height="500" width="360"
+  x="15" y="30"
+  />
+<text x="15" y="30" fill="#FFFFFF" tag="${text_color}" class="ascii">
+<!-- image size (375,500) maybe add tarot card or something here in the future-->
+ % for i, line in enumerate(ascii_lines):
+   <tspan x="15" y="${(i*20)+30}">${line}</tspan>
+ % endfor
+</text>
 <text x="390" y="30" fill="#c9d1d9">
-<tspan x="390" y="30">steven@raintrout</tspan> ———————————————————————————————————————————
-<tspan x="390" y="50" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> ........................ </tspan><tspan class="value">Windows 10, Android 15, Linux</tspan>
-<tspan x="390" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ......................................... </tspan><tspan class="value" id="age_data">27 years</tspan>
-<tspan x="390" y="90" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ........................................ </tspan><tspan class="value">Synthpop.ai</tspan>
-<tspan x="390" y="110" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> ................................ </tspan><tspan class="value">Software Engineer</tspan>
-<tspan x="390" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> ..................... </tspan><tspan class="value">Alacritty 0.15.0, VSCode 1.96.0</tspan>
-<tspan x="390" y="150" class="cc">. </tspan>
-<tspan x="390" y="170" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> ................. </tspan><tspan class="value">Python, Golang, C</tspan>
-<tspan x="390" y="190" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Computer</tspan>:<tspan class="cc"> ................. </tspan><tspan class="value">Markdown, JSON, YAML</tspan>
-<tspan x="390" y="210" class="cc">. </tspan>
-<tspan x="390" y="230" class="cc">. </tspan><tspan class="key">Hobbies</tspan>.<tspan class="key">Outdoor</tspan>:<tspan class="cc"> ........ </tspan><tspan class="value">Hiking, Backpacking, Photography</tspan>
-<tspan x="390" y="250" class="cc">. </tspan><tspan class="key">Hobbies</tspan>.<tspan class="key">Physical</tspan>:<tspan class="cc"> ....................... </tspan><tspan class="value">Running, Fencing</tspan>
-<tspan x="390" y="270" class="cc">. </tspan><tspan class="key">Hobbies</tspan>.<tspan class="key">Mental</tspan>:<tspan class="cc"> ............... </tspan><tspan class="value">Astrophotography, MtG, DnD</tspan>
-<tspan x="390" y="310">- Work</tspan> —————————————————————————————————————————————————————
-<tspan x="390" y="330" class="cc">. </tspan><tspan class="key">Current</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">information extraction and analysis</tspan>
-<tspan x="390" y="350" class="cc">. </tspan><tspan class="cc">.................................... </tspan><tspan class="value">for medical workflows</tspan>
-<tspan x="390" y="370" class="cc">. </tspan>
-<tspan x="390" y="390" class="cc">. </tspan><tspan class="key">Previous</tspan>:<tspan class="cc"> .................... </tspan><tspan class="value">edge computer vision and ml</tspan>
-<tspan x="390" y="410" class="cc">. </tspan><tspan class="cc">.............................. </tspan><tspan class="value">for manufacturing and yards</tspan>
-<tspan x="390" y="450">- Stats</tspan> ————————————————————————————————————————————————————
-<tspan x="390" y="470" class="cc">. </tspan>
-<tspan x="390" y="490" class="cc">. </tspan>         <tspan class="key">Coming Soon</tspan>
-<tspan x="390" y="510" class="cc">. </tspan>
+ % for line in lines:
+    ${line}
+ % endfor
 </text>
 </svg>
