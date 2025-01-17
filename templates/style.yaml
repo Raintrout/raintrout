@@ -1,5 +1,5 @@
 dark:
-  background: '#161b22'
+  background_color: '#161b22'
   style: |
     @font-face {
     src: local('Consolas'), local('Consolas Bold');
@@ -15,7 +15,7 @@ dark:
     .cc {fill: #616e7f;}
     text, tspan {white-space: pre;}
 light:
-  background: '#f6f8fa'
+  background_color: '#f6f8fa'
   style: | 
     @font-face {
     src: local('Consolas'), local('Consolas Bold');

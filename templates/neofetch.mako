@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="985px" height="530px" font-size="16px">
 <style>
-<--STYLE-->
+${style}
 </style>
-<rect width="985px" height="530px" fill="<--BACKGROUND-->" rx="15"/>
+<rect width="985px" height="530px" fill="${background_color}" rx="15"/>
 
 <text x="390" y="30" fill="#c9d1d9">
 <tspan x="390" y="30">steven@raintrout</tspan> ———————————————————————————————————————————
