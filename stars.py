@@ -8,7 +8,7 @@ import astropy.units as u
 WIDTH, HEIGHT = 80, 24    # your ASCII grid size
 WIDTH, HEIGHT = 40, 25
 CHAR_ASPECT_RATIO = 2.0   # char_height / char_width
-ZOOM = 0.2                # degrees of RA per column
+ZOOM = 0.18                # degrees of RA per column
 
 RA_CENTER   = 56.750  # degrees
 DEC_CENTER  = 24.117   # degrees
