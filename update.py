@@ -3,6 +3,7 @@ import yaml
 from mako.lookup import TemplateLookup
 
 from helper import get_sections, render
+from stars import *
 
 template_lookup = TemplateLookup(
     directories=['templates'],
@@ -10,7 +11,9 @@ template_lookup = TemplateLookup(
     preprocessor=[lambda x: x.replace("\r\n", "\n")] # Avoids massive spacing on windows
 )
 
-ascii = template_lookup.get_template('ascii.txt').render()
+# ascii = template_lookup.get_template('ascii.txt').render()
+ascii = render_sky(RA_CENTER, DEC_CENTER, FOV_RA_DEG, FOV_DEC_DEG,
+               WIDTH, HEIGHT, MAG_LIMIT)
 neofetch_template = template_lookup.get_template('neofetch.mako')
 with open('templates/style.yaml', 'r') as style_file:
     style = yaml.safe_load(style_file.read())
