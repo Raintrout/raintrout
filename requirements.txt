@@ -1,2 +1,5 @@
 pyyaml
 mako
+astroquery==0.4.10
+astropy==7.0.1
+numpy==2.2.4
