@@ -11,7 +11,6 @@ template_lookup = TemplateLookup(
     preprocessor=[lambda x: x.replace("\r\n", "\n")] # Avoids massive spacing on windows
 )
 
-# ascii = template_lookup.get_template('ascii.txt').render()
 ascii = render_sky(RA_CENTER, DEC_CENTER, FOV_RA_DEG, FOV_DEC_DEG,
                WIDTH, HEIGHT, MAG_LIMIT)
 neofetch_template = template_lookup.get_template('neofetch.mako')
