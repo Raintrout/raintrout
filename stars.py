@@ -19,7 +19,6 @@ FOV_DEC_DEG = (ZOOM / CHAR_ASPECT_RATIO) * HEIGHT
 
 MAG_LIMIT = 8.5        # faintest Vmag to include
 
-
 # symbol → max Vmag
 SYMBOLS = [
     ('o',  2.0),
