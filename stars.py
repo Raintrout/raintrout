@@ -23,7 +23,7 @@ MAG_LIMIT = 8.5        # faintest Vmag to include
 SYMBOLS = [
     ('o',  2.0),
     ('*',  3.5),
-    ('+',  5.0),
+    ('+',  4.5),
     ('.',  MAG_LIMIT)
 ]
 
