@@ -7,10 +7,12 @@ class Line:
     key: list[str]
     value: str
 
+
 @dataclass
 class Section:
     header: str
     lines: list[Line]
+
 
 def split_value(value: str, line_length: int) -> list[str]:
     lines, line_index = [], [0]
@@ -24,8 +26,10 @@ def split_value(value: str, line_length: int) -> list[str]:
     lines.append(value[line_index[-1]:])
     return lines
 
+
 def render_key(keys: list[str]) -> str:
         return '.'.join(f'<tspan class="key">{key}</tspan>' for key in keys)
+
 
 def render(sections: Section, offset_x: int = 390, offset_y: int = 30, line_length: int = 60) -> Iterator[str]:
     for i, section in enumerate(sections):
@@ -69,6 +73,7 @@ def get_lines(section: dict, keys=[]) -> Iterator[Line]:
                 yield Line(key_list, "")
             else:
                 yield Line(key_list, value)
+
 
 def get_sections(about: dict) -> Iterator[Section]:
     for category, section in about.items():
