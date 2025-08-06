@@ -27,6 +27,7 @@ SYMBOLS = [
     ('.',  MAG_LIMIT)
 ]
 
+
 # ─── FUNCTIONS ────────────────────────────────────────────────────────────────
 
 def fetch_stars(ra_center, dec_center, width_deg, height_deg, mag_limit):
