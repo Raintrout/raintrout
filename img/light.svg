@@ -19,39 +19,39 @@ text, tspan {white-space: pre;}
 <rect width="985px" height="530px" fill="#f6f8fa" rx="15"/>
 <text x="15" y="30" fill="#24292f" class="ascii">
 <!-- image size (375,500) maybe add tarot card or something here in the future-->
-   <tspan x="15" y="30">            .     . .                   </tspan>
-   <tspan x="15" y="50"> .                             . .      </tspan>
-   <tspan x="15" y="70">                        ..              </tspan>
-   <tspan x="15" y="90">               .                        </tspan>
-   <tspan x="15" y="110">                    .                   </tspan>
-   <tspan x="15" y="130">                 .                      </tspan>
-   <tspan x="15" y="150">          .                             </tspan>
-   <tspan x="15" y="170">         .        .                     </tspan>
-   <tspan x="15" y="190">    .            +..           .        </tspan>
-   <tspan x="15" y="210">                  +  ..                 </tspan>
+   <tspan x="15" y="30">                         ..             </tspan>
+   <tspan x="15" y="50">               .                        </tspan>
+   <tspan x="15" y="70">                     .                  </tspan>
+   <tspan x="15" y="90">                                        </tspan>
+   <tspan x="15" y="110">                 .                      </tspan>
+   <tspan x="15" y="130">        .                               </tspan>
+   <tspan x="15" y="150">        .                               </tspan>
+   <tspan x="15" y="170">                  ..                    </tspan>
+   <tspan x="15" y="190">  .              +               .      </tspan>
+   <tspan x="15" y="210">                 +   ..                 </tspan>
    <tspan x="15" y="230">                .   .                   </tspan>
    <tspan x="15" y="250">                      .                 </tspan>
-   <tspan x="15" y="270">                 +  * +         .      .</tspan>
-   <tspan x="15" y="290">                  +    .                </tspan>
-   <tspan x="15" y="310">                   . ..                 </tspan>
-   <tspan x="15" y="330">                   .  .                 </tspan>
-   <tspan x="15" y="350"> .             .                 .      </tspan>
-   <tspan x="15" y="370">                                        </tspan>
-   <tspan x="15" y="390">                     .       .         .</tspan>
-   <tspan x="15" y="410">                                        </tspan>
-   <tspan x="15" y="430">       .          .         . ..   .    </tspan>
-   <tspan x="15" y="450">                          .             </tspan>
-   <tspan x="15" y="470">                   .                    </tspan>
+   <tspan x="15" y="270">                +   * +           .     </tspan>
+   <tspan x="15" y="290">                  +     .               </tspan>
+   <tspan x="15" y="310">                      ..                </tspan>
+   <tspan x="15" y="330">                   .                    </tspan>
+   <tspan x="15" y="350">               .   .   .                </tspan>
+   <tspan x="15" y="370">                                   .    </tspan>
+   <tspan x="15" y="390">                                        </tspan>
+   <tspan x="15" y="410">                     .                  </tspan>
+   <tspan x="15" y="430">                              .         </tspan>
+   <tspan x="15" y="450">     .                       .        . </tspan>
+   <tspan x="15" y="470">                 .          .   ..      </tspan>
    <tspan x="15" y="490">                                        </tspan>
    <tspan x="15" y="510">                                        </tspan>
 </text>
 <text x="390" y="30" fill="#c9d1d9">
     <tspan x="390" y="30">steven@raintrout</tspan> ———————————————————————————————————————————
     <tspan x="390" y="50" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> ........................... </tspan><tspan class="value">OS X 14, Linux, Android 16</tspan>
-    <tspan x="390" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ......................................... </tspan><tspan class="value">27 years</tspan>
+    <tspan x="390" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ......................................... </tspan><tspan class="value">28 years</tspan>
     <tspan x="390" y="90" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ........................................ </tspan><tspan class="value">Synthpop.ai</tspan>
     <tspan x="390" y="110" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> ................................ </tspan><tspan class="value">Software Engineer</tspan>
-    <tspan x="390" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> ..................... </tspan><tspan class="value">Alacritty 0.15.0, VSCode 1.97.0</tspan>
+    <tspan x="390" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> ..................... </tspan><tspan class="value">Alacritty 0.16.0, VSCode 1.97.0</tspan>
     <tspan x="390" y="150" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> ................. </tspan><tspan class="value">Python, Golang, C</tspan>
     <tspan x="390" y="170" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Computer</tspan>:<tspan class="cc"> ................. </tspan><tspan class="value">Markdown, JSON, YAML</tspan>
     <tspan x="390" y="190" class="cc">. </tspan>
