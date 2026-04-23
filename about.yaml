@@ -7,8 +7,8 @@ steven@raintrout:
   Host: Synthpop.ai
   Kernel: Senior AI Engineer
   IDE:
-    - Alacritty 0.16.0
-    - VSCode 1.97.0
+    - Alacritty 0.17.0
+    - VSCode 1.117.0
   Languages:
     Programming:
       - Python
