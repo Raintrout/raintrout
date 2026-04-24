@@ -9,6 +9,7 @@ steven@raintrout:
   IDE:
     - Alacritty 0.17.0
     - VSCode 1.117.0
+    - Claude
   Languages:
     Programming:
       - Python
