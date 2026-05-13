@@ -1,7 +1,7 @@
 from math import ceil
 from typing import Iterable
 
-from sections import Line, Section, WorkEntry
+from sections import Line, Section, WorkBlock, WorkEntry
 
 LOW_CONTEXT_TRAILING_WORDS = {
     "a", "an", "and", "as", "at", "by", "for", "from",
@@ -96,8 +96,7 @@ def _section_header_line(header: str, *, x: int, y: int, line_length: int, is_fi
     return tspan(label, x=x, y=y) + " " + "—" * padding
 
 
-def _regular_line(item: Line, *, x: int, y: int, line_length: int) -> Iterable[tuple[str, str]]:
-    """Yield (svg, _) pairs for a non-work Line, wrapped to line_length."""
+def _regular_line(item: Line, *, x: int, y: int, line_length: int) -> Iterable[str]:
     key = '.'.join(item.key)
     value = item.value
     rendered_key = render_key(item.key)
@@ -130,6 +129,86 @@ def _regular_line(item: Line, *, x: int, y: int, line_length: int) -> Iterable[t
             )
 
 
+def _work_entry_line(entry: WorkEntry, value: str, *, text_x: int, y: int, line_length: int) -> str:
+    key = '.'.join(entry.key)
+    dots = "." * max(1, line_length - 4 - len(key) - len(value))
+    return (
+        tspan(render_key(entry.key), x=text_x, y=y)
+        + tspan(f" {dots} ", cls="cc")
+        + tspan(value, cls="value")
+    )
+
+
+def _work_wrap_continuation(entry: WorkEntry, value: str, *, text_x: int, y: int, line_length: int) -> str:
+    key = '.'.join(entry.key)
+    gap = " " * max(1, line_length - 4 - len(key) - len(value))
+    return (
+        tspan(render_key(entry.key), x=text_x, y=y)
+        + tspan(f" {gap} ", cls="cc", preserve_space=True)
+        + tspan(value, cls="value")
+    )
+
+
+def _work_gap_continuation(value: str, *, text_x: int, y: int, line_length: int) -> str:
+    gap = " " * max(1, line_length - 4 - len(value))
+    return (
+        tspan(f" {gap} ", x=text_x, y=y, cls="cc", preserve_space=True)
+        + tspan(value, cls="value")
+    )
+
+
+def _work_key_only_line(entry: WorkEntry, *, text_x: int, y: int) -> str:
+    return tspan(render_key(entry.key), x=text_x, y=y)
+
+
+def _render_work_block(
+    block: WorkBlock,
+    *,
+    text_x: int,
+    y: int,
+    line_height: int,
+    line_length: int,
+) -> tuple[list[str], list[WorkEntry], int]:
+    primary = block.primary
+    followers = block.followers
+    primary_key_len = len(".".join(primary.key))
+    value = primary.summary
+
+    svg_lines: list[str] = []
+    entries: list[WorkEntry] = [primary]
+
+    wraps = len(value) + primary_key_len > line_length - 10
+
+    if not wraps:
+        svg_lines.append(_work_entry_line(primary, value, text_x=text_x, y=y, line_length=line_length))
+        y += line_height
+        standalone_followers = followers
+    else:
+        parts = split_value(value, line_length - 4 - primary_key_len)
+        attached_follower = followers[0] if followers else None
+        for value_index, part in enumerate(parts):
+            if value_index == 0:
+                svg_lines.append(_work_entry_line(primary, part, text_x=text_x, y=y, line_length=line_length))
+            elif value_index == 1 and attached_follower is not None:
+                entries.append(attached_follower)
+                svg_lines.append(_work_wrap_continuation(
+                    attached_follower, part, text_x=text_x, y=y, line_length=line_length,
+                ))
+            else:
+                svg_lines.append(_work_gap_continuation(part, text_x=text_x, y=y, line_length=line_length))
+            y += line_height
+        # Followers list is always advanced by one when wrapping (matching prior peek-ahead
+        # semantics, even when split produced only one part).
+        standalone_followers = followers[1:] if followers else []
+
+    for follower in standalone_followers:
+        entries.append(follower)
+        svg_lines.append(_work_key_only_line(follower, text_x=text_x, y=y))
+        y += line_height
+
+    return svg_lines, entries, y
+
+
 def render(
     sections: Iterable[Section],
     offset_x: int = 390,
@@ -151,83 +230,37 @@ def render(
 
         work_marker_x = offset_x + WORK_MARKER_DX
         work_text_x = offset_x + WORK_TEXT_DX
-        work_entry_markers: list[tuple[WorkEntry, int]] = []
+        work_entries: list[WorkEntry] = []
+        work_line_start_y: int | None = None
         work_line_end_y: int | None = None
 
-        line_index = 0
-        while line_index < len(section.lines):
-            item = section.lines[line_index]
-
-            if isinstance(item, WorkEntry):
-                work_entry_markers.append((item, offset_y - WORK_MARKER_Y_OFFSET))
-                key = '.'.join(item.key)
-                value = item.summary
-                shared_next: WorkEntry | None = None
-
-                if (
-                    line_index + 1 < len(section.lines)
-                    and isinstance(section.lines[line_index + 1], WorkEntry)
-                    and section.lines[line_index + 1].shared_summary
-                ):
-                    shared_next = section.lines[line_index + 1]
-
-                if item.shared_summary:
-                    lines.append(tspan(render_key(item.key), x=work_text_x, y=offset_y))
-                    offset_y += line_height
-                    line_index += 1
-                elif len(value) + len(key) > line_length - 10:
-                    for value_index, part in enumerate(split_value(value, line_length - 4 - len(key))):
-                        if value_index == 0:
-                            dots = "." * max(1, line_length - 4 - len(key) - len(part))
-                            lines.append(
-                                tspan(render_key(item.key), x=work_text_x, y=offset_y)
-                                + tspan(f" {dots} ", cls="cc")
-                                + tspan(part, cls="value")
-                            )
-                        elif value_index == 1 and shared_next is not None:
-                            shared_key = ".".join(shared_next.key)
-                            work_entry_markers.append((shared_next, offset_y - WORK_MARKER_Y_OFFSET))
-                            gap = " " * max(1, line_length - 4 - len(shared_key) - len(part))
-                            lines.append(
-                                tspan(render_key(shared_next.key), x=work_text_x, y=offset_y)
-                                + tspan(f" {gap} ", cls="cc", preserve_space=True)
-                                + tspan(part, cls="value")
-                            )
-                        else:
-                            gap = " " * max(1, line_length - 4 - len(part))
-                            lines.append(
-                                tspan(f" {gap} ", x=work_text_x, y=offset_y, cls="cc", preserve_space=True)
-                                + tspan(part, cls="value")
-                            )
-                        offset_y += line_height
-                    line_index += 2 if shared_next is not None else 1
-                else:
-                    dots = "." * max(1, line_length - 4 - len(key) - len(value))
-                    lines.append(
-                        tspan(render_key(item.key), x=work_text_x, y=offset_y)
-                        + tspan(f" {dots} ", cls="cc")
-                        + tspan(value, cls="value")
-                    )
-                    offset_y += line_height
-                    line_index += 1
-
+        for item in section.lines:
+            if isinstance(item, WorkBlock):
+                if work_line_start_y is None:
+                    work_line_start_y = offset_y - WORK_MARKER_Y_OFFSET
+                block_lines, block_entries, offset_y = _render_work_block(
+                    item, text_x=work_text_x, y=offset_y,
+                    line_height=line_height, line_length=line_length,
+                )
+                lines.extend(block_lines)
+                work_entries.extend(block_entries)
                 work_line_end_y = offset_y - WORK_MARKER_Y_OFFSET
-                continue
-
-            for svg in _regular_line(item, x=offset_x, y=offset_y, line_length=line_length):
-                lines.append(svg)
-                offset_y += line_height
-            line_index += 1
+            else:
+                for svg in _regular_line(item, x=offset_x, y=offset_y, line_length=line_length):
+                    lines.append(svg)
+                    offset_y += line_height
 
         lines.append(tspan(x=offset_x, y=offset_y))
         offset_y += line_height
 
-        if section.header == "Work" and work_entry_markers:
+        if section.header == "Work" and work_entries:
+            assert work_line_start_y is not None and work_line_end_y is not None
             overlays.extend(
                 _work_timeline_overlays(
-                    work_entry_markers,
+                    work_entries,
                     work_marker_x=work_marker_x,
-                    work_line_end_y=work_line_end_y,
+                    line_start_y=work_line_start_y,
+                    line_end_y=work_line_end_y,
                     line_color=work_timeline_line_color,
                 )
             )
@@ -240,30 +273,28 @@ def render(
 
 
 def _work_timeline_overlays(
-    markers: list[tuple[WorkEntry, int]],
+    entries: list[WorkEntry],
     *,
     work_marker_x: int,
-    work_line_end_y: int | None,
+    line_start_y: int,
+    line_end_y: int,
     line_color: str,
 ) -> Iterable[str]:
-    line_start_y = markers[0][1]
-    line_end_y = work_line_end_y if work_line_end_y is not None else markers[-1][1]
     yield (
         f'<line x1="{work_marker_x}" y1="{line_start_y}" '
         f'x2="{work_marker_x}" y2="{line_end_y}" '
         f'stroke="{line_color}" stroke-width="2"/>'
     )
 
-    start_dates = [entry.start for entry, _ in markers]
-    newest_start = start_dates[0]
-    oldest_start = start_dates[-1]
+    newest_start = entries[0].start
+    oldest_start = entries[-1].start
     total_months = max(
         1,
         (newest_start.year - oldest_start.year) * 12
         + (newest_start.month - oldest_start.month),
     )
     vertical_span = max(1, line_end_y - line_start_y)
-    for entry, _fallback_y in markers:
+    for entry in entries:
         months_from_latest = (
             (newest_start.year - entry.start.year) * 12
             + (newest_start.month - entry.start.month)

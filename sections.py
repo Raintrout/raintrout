@@ -15,10 +15,16 @@ class WorkEntry:
     summary: str
     marker_class: str
     start: date
-    shared_summary: bool = False
 
 
-SectionItem = Line | WorkEntry
+@dataclass
+class WorkBlock:
+    """A work entry plus any consecutive entries that share its summary."""
+    primary: WorkEntry
+    followers: list[WorkEntry]
+
+
+SectionItem = Line | WorkBlock
 
 
 @dataclass
@@ -31,7 +37,7 @@ def parse_work_date(value: str) -> date:
     return datetime.strptime(value, "%Y-%m").date()
 
 
-def get_work_lines(section: dict[str, dict]) -> list[WorkEntry]:
+def get_work_blocks(section: dict[str, dict]) -> list[WorkBlock]:
     entries = [
         WorkEntry(
             key=[label],
@@ -43,15 +49,14 @@ def get_work_lines(section: dict[str, dict]) -> list[WorkEntry]:
     ]
     entries.sort(key=lambda entry: entry.start, reverse=True)
 
-    previous_summary = None
+    blocks: list[WorkBlock] = []
     for entry in entries:
-        if entry.summary and entry.summary == previous_summary:
-            entry.summary = ""
-            entry.shared_summary = True
-        elif entry.summary:
-            previous_summary = entry.summary
+        if blocks and entry.summary and entry.summary == blocks[-1].primary.summary:
+            blocks[-1].followers.append(entry)
+        else:
+            blocks.append(WorkBlock(primary=entry, followers=[]))
 
-    return entries
+    return blocks
 
 
 def get_lines(section: dict, keys: list[str] | None = None) -> Iterator[Line]:
@@ -69,11 +74,9 @@ def get_lines(section: dict, keys: list[str] | None = None) -> Iterator[Line]:
             yield Line(key_list, value)
 
 
-def get_sections(about: dict) -> Iterator[Section]:
-    for category, section in about.items():
-        if str(category).startswith("_"):
-            continue
+def get_sections(profile: dict) -> Iterator[Section]:
+    for category, section in profile.items():
         if category == "Work" and isinstance(section, dict):
-            yield Section(category, list(get_work_lines(section)))
+            yield Section(category, list(get_work_blocks(section)))
             continue
         yield Section(category, list(get_lines(section)))

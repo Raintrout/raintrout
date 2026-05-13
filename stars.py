@@ -1,53 +1,61 @@
-import numpy as np
-from astroquery.vizier import Vizier
-from astropy.coordinates import SkyCoord
-import astropy.units as u
+import hashlib
+from pathlib import Path
 
-# ─── CONFIGURATION ────────────────────────────────────────────────────────────
+import astropy.units as u
+import numpy as np
+from astropy.coordinates import SkyCoord
+from astroquery.vizier import Vizier
 
 WIDTH, HEIGHT = 40, 25    # ASCII grid size
 CHAR_ASPECT_RATIO = 2.0   # char_height / char_width
-ZOOM = 0.20                # degrees of RA per column
+ZOOM = 0.20               # degrees of RA per column
 
-RA_CENTER   = 56.750  # degrees
-DEC_CENTER  = 24.117   # degrees
+RA_CENTER = 56.750
+DEC_CENTER = 24.117
 
-# compute fields of view
-FOV_RA_DEG  = ZOOM * WIDTH
+FOV_RA_DEG = ZOOM * WIDTH
 FOV_DEC_DEG = (ZOOM / CHAR_ASPECT_RATIO) * HEIGHT
 
-MAG_LIMIT = 8.5        # faintest Vmag to include
+MAG_LIMIT = 8.5
 
 # symbol → max Vmag
 SYMBOLS = [
-    ('o',  2.0),
-    ('*',  3.5),
-    ('+',  5.0),
-    ('.',  MAG_LIMIT)
+    ('o', 2.0),
+    ('*', 3.5),
+    ('+', 5.0),
+    ('.', MAG_LIMIT),
 ]
 
+CACHE_DIR = Path(__file__).parent / "cache"
 
-# ─── FUNCTIONS ────────────────────────────────────────────────────────────────
+
+def _cache_path(ra_center, dec_center, fov_ra, fov_dec, width, height, mag_limit):
+    payload = f"{ra_center}|{dec_center}|{fov_ra}|{fov_dec}|{width}|{height}|{mag_limit}"
+    key = hashlib.sha256(payload.encode()).hexdigest()[:16]
+    return CACHE_DIR / f"stars-{key}.txt"
+
 
 def fetch_stars(ra_center, dec_center, width_deg, height_deg, mag_limit):
-    """Query Hipparcos for all stars in the rectangle around (ra,dec)."""
-    v = Vizier(columns=['*'],  # grab everything, then pick the right RA/Dec
-               column_filters={'Vmag': f'<{mag_limit}'},
-               row_limit=-1)
+    """Query Hipparcos for all stars in the rectangle around (ra, dec)."""
+    v = Vizier(
+        columns=['*'],
+        column_filters={'Vmag': f'<{mag_limit}'},
+        row_limit=-1,
+    )
     center = SkyCoord(ra_center, dec_center, unit=(u.deg, u.deg))
-    tbls = v.query_region(center,
-                          width=width_deg * u.deg,
-                          height=height_deg * u.deg,
-                          catalog='I/239/hip_main')
+    tbls = v.query_region(
+        center,
+        width=width_deg * u.deg,
+        height=height_deg * u.deg,
+        catalog='I/239/hip_main',
+    )
     if not tbls:
         raise RuntimeError("No data returned from Vizier.")
     table = tbls[0]
 
-    # Find all RA/Dec-ish columns
-    ra_cols  = [c for c in table.colnames if c.upper().startswith('RA')]
+    ra_cols = [c for c in table.colnames if c.upper().startswith('RA')]
     dec_cols = [c for c in table.colnames if c.upper().startswith('DE')]
 
-    # Prefer the true numeric ICRS columns if present
     for prefer in ('RAICRS', '_RA.icrs', 'RAJ2000'):
         if prefer in table.colnames:
             ra_col = prefer
@@ -62,15 +70,14 @@ def fetch_stars(ra_center, dec_center, width_deg, height_deg, mag_limit):
     else:
         dec_col = dec_cols[0]
 
-    # Check magnitude column
     if 'Vmag' not in table.colnames:
         raise KeyError("Couldn't find 'Vmag' column in the result.")
 
     return table, ra_col, dec_col
 
+
 def map_stars_to_grid(table, ra_col, dec_col, ra_min, ra_max, dec_min, dec_max, w, h):
-    """Convert each star’s RA/Dec into integer (x,y) on the ASCII grid."""
-    ra  = table[ra_col].astype(float)
+    ra = table[ra_col].astype(float)
     dec = table[dec_col].astype(float)
     mag = table['Vmag'].astype(float)
 
@@ -83,22 +90,26 @@ def map_stars_to_grid(table, ra_col, dec_col, ra_min, ra_max, dec_min, dec_max, 
     mask = (x >= 0) & (x < w) & (y >= 0) & (y < h)
     return x[mask], y[mask], mag[mask]
 
+
 def choose_symbol(m):
     for sym, m_max in SYMBOLS:
         if m <= m_max:
             return sym
     return None
 
-def render_sky(ra_center, dec_center, fov_ra, fov_dec, width, height, mag_limit):
-    ra_min  = ra_center  - fov_ra  / 2
-    ra_max  = ra_center  + fov_ra  / 2
+
+def _query_and_render_sky(ra_center, dec_center, fov_ra, fov_dec, width, height, mag_limit):
+    ra_min = ra_center - fov_ra / 2
+    ra_max = ra_center + fov_ra / 2
     dec_min = dec_center - fov_dec / 2
     dec_max = dec_center + fov_dec / 2
 
     stars, ra_col, dec_col = fetch_stars(ra_center, dec_center, fov_ra, fov_dec, mag_limit)
-    xs, ys, mags = map_stars_to_grid(stars, ra_col, dec_col,
-                                     ra_min, ra_max, dec_min, dec_max,
-                                     width, height)
+    xs, ys, mags = map_stars_to_grid(
+        stars, ra_col, dec_col,
+        ra_min, ra_max, dec_min, dec_max,
+        width, height,
+    )
 
     sky = [[' ' for _ in range(width)] for _ in range(height)]
     for x, y, m in zip(xs, ys, mags):
@@ -108,7 +119,20 @@ def render_sky(ra_center, dec_center, fov_ra, fov_dec, width, height, mag_limit)
 
     return '\n'.join(''.join(row) for row in sky)
 
+
+def render_sky(ra_center, dec_center, fov_ra, fov_dec, width, height, mag_limit):
+    cache_file = _cache_path(ra_center, dec_center, fov_ra, fov_dec, width, height, mag_limit)
+    if cache_file.exists():
+        return cache_file.read_text(encoding="utf-8")
+
+    sky = _query_and_render_sky(ra_center, dec_center, fov_ra, fov_dec, width, height, mag_limit)
+    cache_file.parent.mkdir(parents=True, exist_ok=True)
+    cache_file.write_text(sky, encoding="utf-8")
+    return sky
+
+
 if __name__ == '__main__':
-    sky = render_sky(RA_CENTER, DEC_CENTER, FOV_RA_DEG, FOV_DEC_DEG,
-               WIDTH, HEIGHT, MAG_LIMIT)
-    print(sky)
+    print(render_sky(
+        RA_CENTER, DEC_CENTER, FOV_RA_DEG, FOV_DEC_DEG,
+        WIDTH, HEIGHT, MAG_LIMIT,
+    ))

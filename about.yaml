@@ -1,53 +1,54 @@
-_config:
+config:
   birthdate: "1998-01-15"
 
-steven@raintrout:
-  OS: 
-    - OS X 14
-    - Linux
-    - Android 16
-  Uptime: auto
-  Host: Synthpop.ai
-  Kernel: Senior AI Engineer
-  IDE:
-    - Alacritty 0.17.0
-    - VSCode 1.117.0
-    - Claude
-  Languages:
-    Programming:
-      - Python
-      - Golang
-      - C
-    Computer:
-      - Markdown
-      - JSON
-      - YAML
-Work:
-  atollogy:
-    start: "2018-05"
-    end: "2018-11"
-    summary: edge computer vision and ml for manufacturing and yard
+profile:
+  steven@raintrout:
+    OS:
+      - OS X 14
+      - Linux
+      - Android 16
+    Uptime: auto
+    Host: Synthpop.ai
+    Kernel: Senior AI Engineer
+    IDE:
+      - Alacritty 0.17.0
+      - VSCode 1.117.0
+      - Claude
+    Languages:
+      Programming:
+        - Python
+        - Golang
+        - C
+      Computer:
+        - Markdown
+        - JSON
+        - YAML
+  Work:
+    atollogy:
+      start: "2018-05"
+      end: "2018-11"
+      summary: edge computer vision and ml for manufacturing and yard
 
-  thinkiq:
-    start: "2022-02"
-    end: "2024-09"
-    summary: edge computer vision and ml for manufacturing and yard
-  synthpop:
-    start: "2024-09"
-    summary: information extraction and analysis for medical workflows
-Hobbies:
-  Outdoors:
-    - Backpacking
-    - Photography
-    - Hiking
-  Games:
-    - MtG
-    - DnD
-    - Misc
-  Other:
-    - Running
-    - Astro
-    - HEMA
+    thinkiq:
+      start: "2022-02"
+      end: "2024-09"
+      summary: edge computer vision and ml for manufacturing and yard
+    synthpop:
+      start: "2024-09"
+      summary: information extraction and analysis for medical workflows
+  Hobbies:
+    Outdoors:
+      - Backpacking
+      - Photography
+      - Hiking
+    Games:
+      - MtG
+      - DnD
+      - Misc
+    Other:
+      - Running
+      - Astro
+      - HEMA
 
-Stats:
-  Coming Soon: NULL
+  Stats:
+    Coming Soon: NULL

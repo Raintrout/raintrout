@@ -3,10 +3,10 @@ from copy import deepcopy
 from datetime import date, datetime
 
 import yaml
-from mako.lookup import TemplateLookup
 
 from renderer import render
 from sections import get_sections
+from template import render_svg
 from stars import (
     DEC_CENTER,
     FOV_DEC_DEG,
@@ -84,22 +84,18 @@ def format_uptime(birthdate: date, today: date | None = None) -> str:
     return f"{years}y {months:02}mo {days:02}d"
 
 
-def hydrate_description(raw_description: dict) -> dict:
-    hydrated = deepcopy(raw_description)
-    config = hydrated.get("_config", {})
+def hydrate_profile(raw_profile: dict, config: dict) -> dict:
+    profile = deepcopy(raw_profile)
     birthdate = config.get("birthdate")
 
     if birthdate:
-        profile_name = next(
-            (key for key in hydrated.keys() if not str(key).startswith("_")),
-            None,
-        )
-        if profile_name and hydrated[profile_name].get("Uptime") == "auto":
-            hydrated[profile_name]["Uptime"] = format_uptime(
+        host_name = next(iter(profile), None)
+        if host_name and profile[host_name].get("Uptime") == "auto":
+            profile[host_name]["Uptime"] = format_uptime(
                 parse_config_date(birthdate)
             )
 
-    return hydrated
+    return profile
 
 
 def compute_stats_line_length(svg_width: int, stats_x: int, font_size: int) -> int:
@@ -108,7 +104,7 @@ def compute_stats_line_length(svg_width: int, stats_x: int, font_size: int) -> i
     return max(20, int(available_width / monospace_char_width))
 
 
-def build_render_style(style_cfg: dict, hydrated_description: dict) -> dict:
+def build_render_style(style_cfg: dict, profile: dict) -> dict:
     render_style = {**DEFAULT_LAYOUT, **style_cfg}
     render_style["stats_line_length"] = style_cfg.get(
         "stats_line_length",
@@ -124,7 +120,7 @@ def build_render_style(style_cfg: dict, hydrated_description: dict) -> dict:
         baseline=render_style["svg_height"],
     )
     lines, overlays = render(
-        get_sections(hydrated_description),
+        get_sections(profile),
         offset_x=render_style["stats_x"],
         offset_y=render_style["stats_y"],
         line_length=render_style["stats_line_length"],
@@ -138,20 +134,13 @@ def build_render_style(style_cfg: dict, hydrated_description: dict) -> dict:
 
 
 def main() -> None:
-    template_lookup = TemplateLookup(
-        directories=['templates'],
-        strict_undefined=True,
-        preprocessor=[lambda x: x.replace("\r\n", "\n")],  # Avoids massive spacing on windows
-    )
-    neofetch_template = template_lookup.get_template('neofetch.mako')
-
     with open('templates/style.yaml', 'r') as style_file:
         style = yaml.safe_load(style_file.read())
 
     with open('about.yaml', 'r') as about_file:
-        description = yaml.safe_load(about_file.read())
+        about = yaml.safe_load(about_file.read())
 
-    hydrated_description = hydrate_description(description)
+    profile = hydrate_profile(about["profile"], about.get("config", {}))
     ascii_art = render_sky(
         RA_CENTER, DEC_CENTER, FOV_RA_DEG, FOV_DEC_DEG,
         WIDTH, HEIGHT, MAG_LIMIT,
@@ -159,10 +148,10 @@ def main() -> None:
 
     for name, style_cfg in style.items():
         print(f'generating image for {name}.svg')
-        render_style = build_render_style(style_cfg, hydrated_description)
+        render_style = build_render_style(style_cfg, profile)
         with open(f'img/{name}.svg', 'w', encoding="utf8") as output:
             output.write(
-                neofetch_template.render(
+                render_svg(
                     **render_style,
                     ascii_lines=ascii_art.split('\n'),
                 )
