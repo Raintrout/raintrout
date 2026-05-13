@@ -1,11 +1,22 @@
-import yaml
+import calendar
 from copy import deepcopy
 from datetime import date, datetime
 
+import yaml
 from mako.lookup import TemplateLookup
 
-from helper import get_sections, render
-from stars import *
+from renderer import render
+from sections import get_sections
+from stars import (
+    DEC_CENTER,
+    FOV_DEC_DEG,
+    FOV_RA_DEG,
+    HEIGHT,
+    MAG_LIMIT,
+    RA_CENTER,
+    WIDTH,
+    render_sky,
+)
 
 DEFAULT_LAYOUT = {
     "ascii_x": 15,
@@ -20,24 +31,9 @@ DEFAULT_LAYOUT = {
     "svg_width": 985,
 }
 
-template_lookup = TemplateLookup(
-    directories=['templates'],
-    strict_undefined=True,
-    preprocessor=[lambda x: x.replace("\r\n", "\n")] # Avoids massive spacing on windows
-)
-
-ascii = render_sky(RA_CENTER, DEC_CENTER, FOV_RA_DEG, FOV_DEC_DEG,
-               WIDTH, HEIGHT, MAG_LIMIT)
-neofetch_template = template_lookup.get_template('neofetch.mako')
-with open('templates/style.yaml', 'r') as style_file:
-    style = yaml.safe_load(style_file.read())
-
-
-with open('about.yaml', 'r') as about:
-    description = yaml.safe_load(about.read())
-
 
 def scale_mountain_height(path: str, scale: float, baseline: int = 530) -> str:
+    # Only supports the M/L/Z subset used by templates/style.yaml.
     tokens = path.split()
     transformed = []
     command = None
@@ -76,13 +72,9 @@ def format_uptime(birthdate: date, today: date | None = None) -> str:
     days = today.day - birthdate.day
 
     if days < 0:
-        previous_month = today.month - 1 or 12
-        previous_month_year = today.year if today.month > 1 else today.year - 1
-        days_in_previous_month = (
-            date(previous_month_year, previous_month % 12 + 1, 1)
-            - date(previous_month_year, previous_month, 1)
-        ).days
-        days += days_in_previous_month
+        prev_month = today.month - 1 if today.month > 1 else 12
+        prev_month_year = today.year if today.month > 1 else today.year - 1
+        days += calendar.monthrange(prev_month_year, prev_month)[1]
         months -= 1
 
     if months < 0:
@@ -116,7 +108,7 @@ def compute_stats_line_length(svg_width: int, stats_x: int, font_size: int) -> i
     return max(20, int(available_width / monospace_char_width))
 
 
-def build_render_style(style_cfg: dict) -> dict:
+def build_render_style(style_cfg: dict, hydrated_description: dict) -> dict:
     render_style = {**DEFAULT_LAYOUT, **style_cfg}
     render_style["stats_line_length"] = style_cfg.get(
         "stats_line_length",
@@ -131,32 +123,51 @@ def build_render_style(style_cfg: dict) -> dict:
         render_style.get("mountain_height_scale", 1.0),
         baseline=render_style["svg_height"],
     )
-    work_timeline_elements = []
-    render_style["lines"] = list(
-        render(
-            get_sections(hydrated_description),
-            offset_x=render_style["stats_x"],
-            offset_y=render_style["stats_y"],
-            line_length=render_style["stats_line_length"],
-            line_height=render_style["line_height"],
-            max_y=render_style["svg_height"] - render_style["line_height"],
-            overlay_elements=work_timeline_elements,
-            work_timeline_line_color=render_style["work_timeline_line_color"],
-        )
+    lines, overlays = render(
+        get_sections(hydrated_description),
+        offset_x=render_style["stats_x"],
+        offset_y=render_style["stats_y"],
+        line_length=render_style["stats_line_length"],
+        line_height=render_style["line_height"],
+        max_y=render_style["svg_height"] - render_style["line_height"],
+        work_timeline_line_color=render_style["work_timeline_line_color"],
     )
-    render_style["work_timeline_svg"] = "\n".join(work_timeline_elements)
+    render_style["lines"] = lines
+    render_style["work_timeline_svg"] = "\n".join(overlays)
     return render_style
 
 
-hydrated_description = hydrate_description(description)
+def main() -> None:
+    template_lookup = TemplateLookup(
+        directories=['templates'],
+        strict_undefined=True,
+        preprocessor=[lambda x: x.replace("\r\n", "\n")],  # Avoids massive spacing on windows
+    )
+    neofetch_template = template_lookup.get_template('neofetch.mako')
 
-for name, style_cfg in style.items():
-    print(f'generating image for {name}.svg')
-    with open(f'img/{name}.svg', 'w', encoding="utf8") as output:
-        render_style = build_render_style(style_cfg)
-        output.write(
-            neofetch_template.render(
-                **render_style,
-                ascii_lines=ascii.split('\n')
+    with open('templates/style.yaml', 'r') as style_file:
+        style = yaml.safe_load(style_file.read())
+
+    with open('about.yaml', 'r') as about_file:
+        description = yaml.safe_load(about_file.read())
+
+    hydrated_description = hydrate_description(description)
+    ascii_art = render_sky(
+        RA_CENTER, DEC_CENTER, FOV_RA_DEG, FOV_DEC_DEG,
+        WIDTH, HEIGHT, MAG_LIMIT,
+    )
+
+    for name, style_cfg in style.items():
+        print(f'generating image for {name}.svg')
+        render_style = build_render_style(style_cfg, hydrated_description)
+        with open(f'img/{name}.svg', 'w', encoding="utf8") as output:
+            output.write(
+                neofetch_template.render(
+                    **render_style,
+                    ascii_lines=ascii_art.split('\n'),
+                )
             )
-        )
+
+
+if __name__ == '__main__':
+    main()
