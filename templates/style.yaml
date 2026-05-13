@@ -1,6 +1,9 @@
 dark:
   background_color: '#161b22'
   text_color: '#c9d1d9'
+  mountain_color: '#8b949e'
+  mountain_height_scale: 0.5
+  mountain_path: 'M 15 530 L 15 526 L 30 524 L 44 520 L 58 514 L 72 506 L 86 494 L 100 478 L 114 456 L 126 434 L 138 448 L 150 426 L 162 404 L 174 424 L 186 398 L 198 430 L 210 390 L 222 418 L 234 382 L 246 430 L 258 392 L 270 444 L 282 406 L 294 458 L 308 434 L 324 452 L 340 468 L 356 482 L 372 494 L 390 500 L 420 504 L 455 496 L 490 502 L 530 490 L 575 504 L 620 492 L 668 506 L 720 494 L 774 508 L 830 498 L 888 510 L 940 502 L 970 514 L 970 530 Z'
   style: |
     @font-face {
     src: local('Consolas'), local('Consolas Bold');
@@ -18,6 +21,9 @@ dark:
 light:
   background_color: '#f6f8fa'
   text_color: '#24292f'
+  mountain_color: '#57606a'
+  mountain_height_scale: 0.5
+  mountain_path: 'M 15 530 L 15 526 L 30 524 L 44 520 L 58 514 L 72 506 L 86 494 L 100 478 L 114 456 L 126 434 L 138 448 L 150 426 L 162 404 L 174 424 L 186 398 L 198 430 L 210 390 L 222 418 L 234 382 L 246 430 L 258 392 L 270 444 L 282 406 L 294 458 L 308 434 L 324 452 L 340 468 L 356 482 L 372 494 L 390 500 L 420 504 L 455 496 L 490 502 L 530 490 L 575 504 L 620 492 L 668 506 L 720 494 L 774 508 L 830 498 L 888 510 L 940 502 L 970 514 L 970 530 Z'
   style: | 
     @font-face {
     src: local('Consolas'), local('Consolas Bold');

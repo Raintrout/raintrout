@@ -10,6 +10,7 @@ ${style}
    <tspan x="15" y="${(i*20)+30}">${line}</tspan>
  % endfor
 </text>
+<path d="${mountain_path}" fill="${mountain_color}"/>
 <text x="390" y="30" fill="#c9d1d9">
  % for line in lines:
     ${line}

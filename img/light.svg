@@ -45,6 +45,7 @@ text, tspan {white-space: pre;}
    <tspan x="15" y="490">                   .                    </tspan>
    <tspan x="15" y="510">                                        </tspan>
 </text>
+<path d="M 15 530 L 15 528 L 30 527 L 44 525 L 58 522 L 72 518 L 86 512 L 100 504 L 114 493 L 126 482 L 138 489 L 150 478 L 162 467 L 174 477 L 186 464 L 198 480 L 210 460 L 222 474 L 234 456 L 246 480 L 258 461 L 270 487 L 282 468 L 294 494 L 308 482 L 324 491 L 340 499 L 356 506 L 372 512 L 390 515 L 420 517 L 455 513 L 490 516 L 530 510 L 575 517 L 620 511 L 668 518 L 720 512 L 774 519 L 830 514 L 888 520 L 940 516 L 970 522 L 970 530 Z" fill="#57606a"/>
 <text x="390" y="30" fill="#c9d1d9">
     <tspan x="390" y="30">steven@raintrout</tspan> ———————————————————————————————————————————
     <tspan x="390" y="50" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> ........................... </tspan><tspan class="value">OS X 14, Linux, Android 16</tspan>
