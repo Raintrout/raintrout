@@ -23,8 +23,18 @@ steven@raintrout:
       - JSON
       - YAML
 Work:
-  Current: information extraction and analysis for medical workflows
-  Previous: edge computer vision and ml for manufacturing and yard
+  atollogy:
+    start: "2018-05"
+    end: "2018-11"
+    summary: edge computer vision and ml for manufacturing and yard
+
+  thinkiq:
+    start: "2022-02"
+    end: "2024-09"
+    summary: edge computer vision and ml for manufacturing and yard
+  synthpop:
+    start: "2024-09"
+    summary: information extraction and analysis for medical workflows
 Hobbies:
   Outdoors:
     - Backpacking

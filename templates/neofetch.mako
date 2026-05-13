@@ -11,6 +11,7 @@ ${style}
  % endfor
 </text>
 <path d="${mountain_path}" fill="${mountain_color}"/>
+${work_timeline_svg}
 <text x="${stats_x}" y="${stats_y}" fill="${stats_text_color}">
  % for line in lines:
     ${line}

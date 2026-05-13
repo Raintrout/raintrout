@@ -16,7 +16,6 @@ DEFAULT_LAYOUT = {
     "stats_text_color": "#c9d1d9",
     "stats_x": 390,
     "stats_y": 30,
-    "stats_line_length": 60,
     "svg_height": 530,
     "svg_width": 985,
 }
@@ -111,13 +110,28 @@ def hydrate_description(raw_description: dict) -> dict:
     return hydrated
 
 
+def compute_stats_line_length(svg_width: int, stats_x: int, font_size: int) -> int:
+    available_width = max(0, svg_width - stats_x - 15)
+    monospace_char_width = font_size * 0.61
+    return max(20, int(available_width / monospace_char_width))
+
+
 def build_render_style(style_cfg: dict) -> dict:
     render_style = {**DEFAULT_LAYOUT, **style_cfg}
+    render_style["stats_line_length"] = style_cfg.get(
+        "stats_line_length",
+        compute_stats_line_length(
+            render_style["svg_width"],
+            render_style["stats_x"],
+            render_style["font_size"],
+        ),
+    )
     render_style["mountain_path"] = scale_mountain_height(
         render_style["mountain_path"],
         render_style.get("mountain_height_scale", 1.0),
         baseline=render_style["svg_height"],
     )
+    work_timeline_elements = []
     render_style["lines"] = list(
         render(
             get_sections(hydrated_description),
@@ -126,8 +140,11 @@ def build_render_style(style_cfg: dict) -> dict:
             line_length=render_style["stats_line_length"],
             line_height=render_style["line_height"],
             max_y=render_style["svg_height"] - render_style["line_height"],
+            overlay_elements=work_timeline_elements,
+            work_timeline_line_color=render_style["work_timeline_line_color"],
         )
     )
+    render_style["work_timeline_svg"] = "\n".join(work_timeline_elements)
     return render_style
 
 
