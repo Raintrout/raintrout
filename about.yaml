@@ -11,24 +11,18 @@ profile:
     Host: Synthpop.ai
     Kernel: Senior AI Engineer
     IDE:
-      - Alacritty 0.17.0
-      - VSCode 1.117.0
+      - Alacritty
+      - VSCode
       - Claude
     Languages:
-      Programming:
-        - Python
-        - Golang
-        - C
-      Computer:
-        - Markdown
-        - JSON
-        - YAML
+      - Python
+      - Golang
+      - C
   Work:
     atollogy:
       start: "2018-05"
       end: "2018-11"
       summary: edge computer vision and ml for manufacturing and yard
-
     thinkiq:
       start: "2022-02"
       end: "2024-09"
@@ -51,4 +45,7 @@ profile:
       - HEMA
 
   Stats:
-    Coming Soon: NULL
+    - {Miles (hiked): "${stats.hiked_miles}", Miles (run): "${stats.run_miles}"}
+    - {Nights camped: "${stats.nights_camped}", Longest: "${stats.longest_hike}"}
+    - Objective: Mount Baker
+    - Favorite trail: John Muir Trail

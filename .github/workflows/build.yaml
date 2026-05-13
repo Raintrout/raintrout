@@ -24,6 +24,10 @@ jobs:
       - name: Install dependencies
         run: uv sync --locked
       - name: Update README file
+        env:
+          STATS_URL: ${{ secrets.STATS_URL }}
+          STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
+          STATS_CACHE_TTL_HOURS: ${{ secrets.STATS_CACHE_TTL_HOURS }}
         run: uv run python update.py
       - name: Commit
         run: |-

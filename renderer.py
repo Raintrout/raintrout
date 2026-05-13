@@ -1,7 +1,7 @@
 from math import ceil
 from typing import Iterable
 
-from sections import Line, Section, WorkBlock, WorkEntry
+from sections import ColumnRow, Line, Section, WorkBlock, WorkEntry
 
 LOW_CONTEXT_TRAILING_WORDS = {
     "a", "an", "and", "as", "at", "by", "for", "from",
@@ -12,6 +12,8 @@ WORK_MARKER_DX = 8
 WORK_TEXT_DX = 20
 WORK_MARKER_Y_OFFSET = 6
 WORK_MARKER_RADIUS = 4
+
+COLUMN_GUTTER = 4  # chars between adjacent columns in a multi-column row
 
 
 def tspan(
@@ -127,6 +129,38 @@ def _regular_line(item: Line, *, x: int, y: int, line_length: int) -> Iterable[s
                 + tspan(f" {dots} ", cls="cc")
                 + tspan(part, cls="value")
             )
+
+
+def _column_row(row: ColumnRow, *, x: int, y: int, line_length: int) -> list[str]:
+    if len(row.cells) == 1:
+        return list(_regular_line(row.cells[0], x=x, y=y, line_length=line_length))
+
+    n = len(row.cells)
+    col_width = (line_length - COLUMN_GUTTER * (n - 1)) // n
+    gutter_size = (line_length - col_width * n) // (n - 1)
+    gutter = " " * gutter_size
+
+    parts: list[str] = []
+    for i, cell in enumerate(row.cells):
+        key = '.'.join(cell.key)
+        value = cell.value
+        dots = "." * max(0, col_width - 5 - len(key) - len(value))
+        rendered_key = render_key(cell.key)
+        if i == 0:
+            parts.append(
+                tspan(". ", x=x, y=y, cls="cc")
+                + f"{rendered_key}:"
+                + tspan(f" {dots} ", cls="cc")
+                + tspan(value, cls="value")
+            )
+        else:
+            parts.append(
+                tspan(f"{gutter}. ", cls="cc", preserve_space=True)
+                + f"{rendered_key}:"
+                + tspan(f" {dots} ", cls="cc")
+                + tspan(value, cls="value")
+            )
+    return ["".join(parts)]
 
 
 def _work_entry_line(entry: WorkEntry, value: str, *, text_x: int, y: int, line_length: int) -> str:
@@ -245,6 +279,10 @@ def render(
                 lines.extend(block_lines)
                 work_entries.extend(block_entries)
                 work_line_end_y = offset_y - WORK_MARKER_Y_OFFSET
+            elif isinstance(item, ColumnRow):
+                for svg in _column_row(item, x=offset_x, y=offset_y, line_length=line_length):
+                    lines.append(svg)
+                    offset_y += line_height
             else:
                 for svg in _regular_line(item, x=offset_x, y=offset_y, line_length=line_length):
                     lines.append(svg)

@@ -24,7 +24,13 @@ class WorkBlock:
     followers: list[WorkEntry]
 
 
-SectionItem = Line | WorkBlock
+@dataclass
+class ColumnRow:
+    """One Stats row containing 1 or 2 key/value cells laid out side-by-side."""
+    cells: list[Line]
+
+
+SectionItem = Line | WorkBlock | ColumnRow
 
 
 @dataclass
@@ -59,6 +65,20 @@ def get_work_blocks(section: dict[str, dict]) -> list[WorkBlock]:
     return blocks
 
 
+def get_stat_rows(section: list) -> Iterator[ColumnRow]:
+    for row in section:
+        if isinstance(row, dict):
+            pairs = row.items()
+        else:
+            continue
+        cells = [
+            Line(key=[str(k)], value="" if v is None else str(v))
+            for k, v in pairs
+        ]
+        if cells:
+            yield ColumnRow(cells=cells)
+
+
 def get_lines(section: dict, keys: list[str] | None = None) -> Iterator[Line]:
     keys = keys or []
     for key, value in section.items():
@@ -78,5 +98,8 @@ def get_sections(profile: dict) -> Iterator[Section]:
     for category, section in profile.items():
         if category == "Work" and isinstance(section, dict):
             yield Section(category, list(get_work_blocks(section)))
+            continue
+        if category == "Stats" and isinstance(section, list):
+            yield Section(category, list(get_stat_rows(section)))
             continue
         yield Section(category, list(get_lines(section)))

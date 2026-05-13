@@ -46,35 +46,35 @@ text, tspan {white-space: pre;}
    <tspan x="15" y="510">                                        </tspan>
 </text>
 <path d="M 15 530 L 15 528 L 30 527 L 44 525 L 58 522 L 72 518 L 86 512 L 100 504 L 114 493 L 126 482 L 138 489 L 150 478 L 162 467 L 174 477 L 186 464 L 198 480 L 210 460 L 222 474 L 234 456 L 246 480 L 258 461 L 270 487 L 282 468 L 294 494 L 308 482 L 324 491 L 340 499 L 356 506 L 372 512 L 390 515 L 420 517 L 455 513 L 490 516 L 530 510 L 575 517 L 620 511 L 668 518 L 720 512 L 774 519 L 830 514 L 888 520 L 940 516 L 970 522 L 970 530 Z" fill="#8b949e"/>
-<line x1="398" y1="224" x2="398" y2="304" stroke="#616e7f" stroke-width="2"/>
-<circle cx="398" cy="224" r="4" class="currentWorkColor"/>
-<circle cx="398" cy="257" r="4" class="pastWorkColor"/>
-<circle cx="398" cy="304" r="4" class="pastWorkColor"/>
+<line x1="398" y1="204" x2="398" y2="284" stroke="#616e7f" stroke-width="2"/>
+<circle cx="398" cy="204" r="4" class="currentWorkColor"/>
+<circle cx="398" cy="237" r="4" class="pastWorkColor"/>
+<circle cx="398" cy="284" r="4" class="pastWorkColor"/>
 <text x="390" y="30" fill="#c9d1d9">
     <tspan x="390" y="30">steven@raintrout</tspan> ——————————————————————————————————————————
     <tspan x="390" y="50" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">OS X 14, Linux, Android 16</tspan>
     <tspan x="390" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> .................................... </tspan><tspan class="value">28y 03mo 28d</tspan>
     <tspan x="390" y="90" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ....................................... </tspan><tspan class="value">Synthpop.ai</tspan>
     <tspan x="390" y="110" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> .............................. </tspan><tspan class="value">Senior AI Engineer</tspan>
-    <tspan x="390" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">Alacritty 0.17.0, VSCode 1.117.0, Claude</tspan>
-    <tspan x="390" y="150" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value">Python, Golang, C</tspan>
-    <tspan x="390" y="170" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Computer</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value">Markdown, JSON, YAML</tspan>
-    <tspan x="390" y="190"></tspan>
-    <tspan x="390" y="210">- Work</tspan> ————————————————————————————————————————————————————
-    <tspan x="410" y="230"><tspan class="key">synthpop</tspan></tspan><tspan class="cc"> ............ </tspan><tspan class="value">information extraction and analysis</tspan>
-    <tspan x="410" y="250" class="cc" xml:space="preserve">                                    </tspan><tspan class="value">for medical workflows</tspan>
-    <tspan x="410" y="270"><tspan class="key">thinkiq</tspan></tspan><tspan class="cc"> ..................... </tspan><tspan class="value">edge computer vision and ml</tspan>
-    <tspan x="410" y="290"><tspan class="key">atollogy</tspan></tspan><tspan class="cc" xml:space="preserve">                       </tspan><tspan class="value">for manufacturing and yard</tspan>
-    <tspan x="390" y="310"></tspan>
-    <tspan x="390" y="330">- Hobbies</tspan> —————————————————————————————————————————————————
-    <tspan x="390" y="350" class="cc">. </tspan><tspan class="key">Outdoors</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">Backpacking, Photography, Hiking</tspan>
-    <tspan x="390" y="370" class="cc">. </tspan><tspan class="key">Games</tspan>:<tspan class="cc"> ................................... </tspan><tspan class="value">MtG, DnD, Misc</tspan>
-    <tspan x="390" y="390" class="cc">. </tspan><tspan class="key">Other</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value">Running, Astro, HEMA</tspan>
-    <tspan x="390" y="410"></tspan>
-    <tspan x="390" y="430">- Stats</tspan> ———————————————————————————————————————————————————
-    <tspan x="390" y="450" class="cc">. </tspan><tspan class="key">Coming Soon</tspan>:<tspan class="cc"> ........................................... </tspan><tspan class="value"></tspan>
-    <tspan x="390" y="470"></tspan>
-    <tspan x="390" y="490" class="cc">. </tspan>
-    <tspan x="390" y="510" class="cc">. </tspan>
+    <tspan x="390" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">Alacritty, VSCode, Claude</tspan>
+    <tspan x="390" y="150" class="cc">. </tspan><tspan class="key">Languages</tspan>:<tspan class="cc"> ............................ </tspan><tspan class="value">Python, Golang, C</tspan>
+    <tspan x="390" y="170"></tspan>
+    <tspan x="390" y="190">- Work</tspan> ————————————————————————————————————————————————————
+    <tspan x="410" y="210"><tspan class="key">synthpop</tspan></tspan><tspan class="cc"> ............ </tspan><tspan class="value">information extraction and analysis</tspan>
+    <tspan x="410" y="230" class="cc" xml:space="preserve">                                    </tspan><tspan class="value">for medical workflows</tspan>
+    <tspan x="410" y="250"><tspan class="key">thinkiq</tspan></tspan><tspan class="cc"> ..................... </tspan><tspan class="value">edge computer vision and ml</tspan>
+    <tspan x="410" y="270"><tspan class="key">atollogy</tspan></tspan><tspan class="cc" xml:space="preserve">                       </tspan><tspan class="value">for manufacturing and yard</tspan>
+    <tspan x="390" y="290"></tspan>
+    <tspan x="390" y="310">- Hobbies</tspan> —————————————————————————————————————————————————
+    <tspan x="390" y="330" class="cc">. </tspan><tspan class="key">Outdoors</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">Backpacking, Photography, Hiking</tspan>
+    <tspan x="390" y="350" class="cc">. </tspan><tspan class="key">Games</tspan>:<tspan class="cc"> ................................... </tspan><tspan class="value">MtG, DnD, Misc</tspan>
+    <tspan x="390" y="370" class="cc">. </tspan><tspan class="key">Other</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value">Running, Astro, HEMA</tspan>
+    <tspan x="390" y="390"></tspan>
+    <tspan x="390" y="410">- Stats</tspan> ———————————————————————————————————————————————————
+    <tspan x="390" y="430" class="cc">. </tspan><tspan class="key">Miles (hiked)</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">287</tspan><tspan class="cc" xml:space="preserve">     . </tspan><tspan class="key">Miles (run)</tspan>:<tspan class="cc"> ....... </tspan><tspan class="value">1240</tspan>
+    <tspan x="390" y="450" class="cc">. </tspan><tspan class="key">Nights camped</tspan>:<tspan class="cc"> ....... </tspan><tspan class="value">14</tspan><tspan class="cc" xml:space="preserve">     . </tspan><tspan class="key">Longest</tspan>:<tspan class="cc"> .......... </tspan><tspan class="value">82 mi</tspan>
+    <tspan x="390" y="470" class="cc">. </tspan><tspan class="key">Objective</tspan>:<tspan class="cc"> .................................. </tspan><tspan class="value">Mount Baker</tspan>
+    <tspan x="390" y="490" class="cc">. </tspan><tspan class="key">Favorite trail</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">John Muir Trail</tspan>
+    <tspan x="390" y="510"></tspan>
 </text>
 </svg>

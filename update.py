@@ -1,9 +1,14 @@
 import calendar
+import os
+import re
 from copy import deepcopy
 from datetime import date, datetime
+from pathlib import Path
+from typing import Any
 
 import yaml
 
+import providers
 from renderer import render
 from sections import get_sections
 from template import render_svg
@@ -17,6 +22,8 @@ from stars import (
     WIDTH,
     render_sky,
 )
+
+TEMPLATE_RE = re.compile(r'^\$\{([^.}]+)\.([^}]+)\}$')
 
 DEFAULT_LAYOUT = {
     "ascii_x": 15,
@@ -84,6 +91,21 @@ def format_uptime(birthdate: date, today: date | None = None) -> str:
     return f"{years}y {months:02}mo {days:02}d"
 
 
+def _substitute_templates(value: Any) -> Any:
+    if isinstance(value, str):
+        match = TEMPLATE_RE.match(value)
+        if match:
+            resolved = providers.resolve(match.group(1), match.group(2))
+            if resolved is not None:
+                return resolved
+        return value
+    if isinstance(value, dict):
+        return {k: _substitute_templates(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [_substitute_templates(v) for v in value]
+    return value
+
+
 def hydrate_profile(raw_profile: dict, config: dict) -> dict:
     profile = deepcopy(raw_profile)
     birthdate = config.get("birthdate")
@@ -95,7 +117,25 @@ def hydrate_profile(raw_profile: dict, config: dict) -> dict:
                 parse_config_date(birthdate)
             )
 
-    return profile
+    return _substitute_templates(profile)
+
+
+def load_env_file(path: str = ".env") -> None:
+    """Minimal .env loader: KEY=value, comments, quoted values. Sets os.environ
+    but does not overwrite already-set variables (so GitHub Actions secrets win)."""
+    env_path = Path(path)
+    if not env_path.exists():
+        return
+    for raw_line in env_path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, value = line.partition("=")
+        key = key.strip()
+        value = value.strip()
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in ("'", '"'):
+            value = value[1:-1]
+        os.environ.setdefault(key, value)
 
 
 def compute_stats_line_length(svg_width: int, stats_x: int, font_size: int) -> int:
@@ -134,6 +174,9 @@ def build_render_style(style_cfg: dict, profile: dict) -> dict:
 
 
 def main() -> None:
+    load_env_file()
+    providers.init()
+
     with open('templates/style.yaml', 'r') as style_file:
         style = yaml.safe_load(style_file.read())
 
