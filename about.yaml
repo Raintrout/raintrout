@@ -1,9 +1,12 @@
+_config:
+  birthdate: "1998-01-15"
+
 steven@raintrout:
   OS: 
     - OS X 14
     - Linux
     - Android 16
-  Uptime: 28 years
+  Uptime: auto
   Host: Synthpop.ai
   Kernel: Senior AI Engineer
   IDE:

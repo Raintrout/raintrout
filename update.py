@@ -1,9 +1,25 @@
 import yaml
+from copy import deepcopy
+from datetime import date, datetime
 
 from mako.lookup import TemplateLookup
 
 from helper import get_sections, render
 from stars import *
+
+DEFAULT_LAYOUT = {
+    "ascii_x": 15,
+    "ascii_y": 30,
+    "border_radius": 15,
+    "font_size": 16,
+    "line_height": 20,
+    "stats_text_color": "#c9d1d9",
+    "stats_x": 390,
+    "stats_y": 30,
+    "stats_line_length": 60,
+    "svg_height": 530,
+    "svg_width": 985,
+}
 
 template_lookup = TemplateLookup(
     directories=['templates'],
@@ -46,21 +62,84 @@ def scale_mountain_height(path: str, scale: float, baseline: int = 530) -> str:
 
     return " ".join(transformed)
 
+
+def parse_config_date(value: str | date) -> date:
+    if isinstance(value, date):
+        return value
+    return datetime.strptime(value, "%Y-%m-%d").date()
+
+
+def format_uptime(birthdate: date, today: date | None = None) -> str:
+    today = today or date.today()
+
+    years = today.year - birthdate.year
+    months = today.month - birthdate.month
+    days = today.day - birthdate.day
+
+    if days < 0:
+        previous_month = today.month - 1 or 12
+        previous_month_year = today.year if today.month > 1 else today.year - 1
+        days_in_previous_month = (
+            date(previous_month_year, previous_month % 12 + 1, 1)
+            - date(previous_month_year, previous_month, 1)
+        ).days
+        days += days_in_previous_month
+        months -= 1
+
+    if months < 0:
+        months += 12
+        years -= 1
+
+    return f"{years}y {months:02}mo {days:02}d"
+
+
+def hydrate_description(raw_description: dict) -> dict:
+    hydrated = deepcopy(raw_description)
+    config = hydrated.get("_config", {})
+    birthdate = config.get("birthdate")
+
+    if birthdate:
+        profile_name = next(
+            (key for key in hydrated.keys() if not str(key).startswith("_")),
+            None,
+        )
+        if profile_name and hydrated[profile_name].get("Uptime") == "auto":
+            hydrated[profile_name]["Uptime"] = format_uptime(
+                parse_config_date(birthdate)
+            )
+
+    return hydrated
+
+
+def build_render_style(style_cfg: dict) -> dict:
+    render_style = {**DEFAULT_LAYOUT, **style_cfg}
+    render_style["mountain_path"] = scale_mountain_height(
+        render_style["mountain_path"],
+        render_style.get("mountain_height_scale", 1.0),
+        baseline=render_style["svg_height"],
+    )
+    render_style["lines"] = list(
+        render(
+            get_sections(hydrated_description),
+            offset_x=render_style["stats_x"],
+            offset_y=render_style["stats_y"],
+            line_length=render_style["stats_line_length"],
+            line_height=render_style["line_height"],
+            max_y=render_style["svg_height"] - render_style["line_height"],
+        )
+    )
+    return render_style
+
+
+hydrated_description = hydrate_description(description)
+
 for name, style_cfg in style.items():
     print(f'generating image for {name}.svg')
     with open(f'img/{name}.svg', 'w', encoding="utf8") as output:
-        render_style = dict(style_cfg)
-        render_style["mountain_path"] = scale_mountain_height(
-            render_style["mountain_path"],
-            render_style.get("mountain_height_scale", 1.0),
-        )
+        render_style = build_render_style(style_cfg)
         output.write(
             neofetch_template.render(
                 **render_style,
-                lines=render(get_sections(description)),
                 ascii_lines=ascii.split('\n')
             )
         )
-
-
-
