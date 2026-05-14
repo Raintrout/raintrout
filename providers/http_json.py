@@ -22,7 +22,10 @@ class HttpJsonProvider(CachedProvider):
         self.timeout_seconds = timeout_seconds
 
     def _live_fetch(self) -> dict[str, Any]:
-        req = urllib.request.Request(self.url, headers={"Accept": "application/json"})
+        req = urllib.request.Request(self.url, headers={
+            "Accept": "application/json",
+            "User-Agent": "raintrout/1.0",
+        })
         if self.token:
             req.add_header("Authorization", f"Bearer {self.token}")
         with urllib.request.urlopen(req, timeout=self.timeout_seconds) as response:

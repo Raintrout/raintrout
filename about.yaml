@@ -45,7 +45,8 @@ profile:
       - HEMA
 
   Stats:
-    - {Miles (hiked): "${stats.hiked_miles}", Miles (run): "${stats.run_miles}"}
+    - Stats: "${stats.provider}"
+    - {Miles (hiked): "${stats.hiked_miles}", Miles (run): "${stats.miles_run}"}
     - {Nights camped: "${stats.nights_camped}", Longest: "${stats.longest_hike}"}
     - Objective: Mount Baker
     - Favorite trail: John Muir Trail

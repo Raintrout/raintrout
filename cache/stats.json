@@ -1,9 +1,12 @@
 {
   "data": {
+    "generated_at": "2026-05-14T04:40:03.025489+00:00",
     "hiked_miles": 104,
-    "longest_hike": "206 mi",
+    "longest_hike": 206,
+    "miles_run": 325,
     "nights_camped": 4,
-    "run_miles": 325
+    "provider": "garmin",
+    "status": "stub"
   },
-  "timestamp": "2026-05-13T22:37:48.817198+00:00"
+  "timestamp": "2026-05-14T04:41:09.688516+00:00"
 }

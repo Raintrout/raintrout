@@ -31,6 +31,7 @@ def init() -> None:
     _registry.clear()
 
     stats_url = os.environ.get("STATS_URL")
+    print(stats_url)
     if stats_url:
         _registry["stats"] = HttpJsonProvider(
             name="stats",
