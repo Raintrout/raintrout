@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 import sys
+from typing import Any
 
 from .base import CACHE_DIR, DEFAULT_TTL_HOURS, CacheOnlyProvider, Provider
 from .http_json import HttpJsonProvider
@@ -49,7 +50,9 @@ def init() -> None:
 
 
 def resolve(provider_name: str, field: str) -> str | None:
-    """Return the resolved string value, or None if unavailable."""
+    """Return the resolved string value, or None if unavailable.
+
+    `field` may use dot notation (e.g. "a.b.c") to traverse nested objects."""
     if not _initialized:
         init()
     provider = _registry.get(provider_name)
@@ -58,14 +61,19 @@ def resolve(provider_name: str, field: str) -> str | None:
     data = provider.fetch()
     if data is None:
         return None
-    if field not in data:
-        key = (provider_name, field)
-        if key not in _warned_fields:
-            print(
-                f"[{provider_name}] field {field!r} not in response "
-                f"(available: {sorted(data)})",
-                file=sys.stderr,
-            )
-            _warned_fields.add(key)
-        return None
-    return str(data[field])
+
+    cursor: Any = data
+    for part in field.split("."):
+        if not isinstance(cursor, dict) or part not in cursor:
+            key = (provider_name, field)
+            if key not in _warned_fields:
+                available = sorted(cursor) if isinstance(cursor, dict) else "<not an object>"
+                print(
+                    f"[{provider_name}] field {field!r} not in response "
+                    f"(stopped at {part!r}; available: {available})",
+                    file=sys.stderr,
+                )
+                _warned_fields.add(key)
+            return None
+        cursor = cursor[part]
+    return str(cursor)
