@@ -1,0 +1,74 @@
+{
+  "data": {
+    "as_of": "2026-05-18",
+    "generated_at": "2026-05-18T23:14:21.331310+00:00",
+    "monthly_miles": [
+      {
+        "all": 59.8,
+        "hike": 16.0,
+        "month": "2026-01",
+        "run": 43.8,
+        "walk": 0.0
+      },
+      {
+        "all": 89.4,
+        "hike": 4.0,
+        "month": "2026-02",
+        "run": 64.6,
+        "walk": 9.8
+      },
+      {
+        "all": 137.3,
+        "hike": 8.2,
+        "month": "2026-03",
+        "run": 69.7,
+        "walk": 6.0
+      },
+      {
+        "all": 147.4,
+        "hike": 51.2,
+        "month": "2026-04",
+        "run": 94.1,
+        "walk": 2.1
+      },
+      {
+        "all": 100.2,
+        "hike": 33.9,
+        "month": "2026-05",
+        "run": 61.1,
+        "walk": 5.2
+      }
+    ],
+    "most_recent_activity": {
+      "date": "2026-05-16",
+      "duration_minutes": 103.5,
+      "elevation_gain_feet": 686,
+      "miles": 4.1,
+      "title": "Mono County Hiking",
+      "type": "hike"
+    },
+    "status": "ok",
+    "year": 2026,
+    "ytd": {
+      "activity_counts": {
+        "all": 79,
+        "hike": 18,
+        "run": 51,
+        "walk": 6
+      },
+      "elevation_gain_feet": {
+        "all": 47606,
+        "hike": 20516,
+        "run": 5541,
+        "walk": 410
+      },
+      "miles": {
+        "all": 534.0,
+        "hike": 113.2,
+        "run": 333.3,
+        "walk": 23.0
+      }
+    }
+  },
+  "timestamp": "2026-05-18T23:32:42.941930+00:00"
+}

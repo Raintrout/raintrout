@@ -71,9 +71,9 @@ text, tspan {white-space: pre;}
     <tspan x="390" y="370" class="cc">. </tspan><tspan class="key">Other</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value">Running, Astro, HEMA</tspan>
     <tspan x="390" y="390"></tspan>
     <tspan x="390" y="410">- Stats</tspan> ———————————————————————————————————————————————————
-    <tspan x="390" y="430" class="cc">. </tspan><tspan class="key">YTD hike mi</tspan>:<tspan class="cc">  </tspan><tspan class="value">${stats.ytd.miles.hike}</tspan><tspan class="cc" xml:space="preserve">     . </tspan><tspan class="key">YTD run mi</tspan>:<tspan class="cc">  </tspan><tspan class="value">${stats.ytd.miles.run}</tspan>
-    <tspan x="390" y="450" class="cc">. </tspan><tspan class="key">Activities</tspan>:<tspan class="cc">  </tspan><tspan class="value">${stats.ytd.activity_counts.all}</tspan><tspan class="cc" xml:space="preserve">     . </tspan><tspan class="key">Elev gain ft</tspan>:<tspan class="cc">  </tspan><tspan class="value">${stats.ytd.elevation_gain_feet.all}</tspan>
-    <tspan x="390" y="470" class="cc">. </tspan><tspan class="key">Recent act</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value">${stats.most_recent_activity.title}</tspan>
+    <tspan x="390" y="430" class="cc">. </tspan><tspan class="key">YTD hike mi</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">113.2</tspan><tspan class="cc" xml:space="preserve">     . </tspan><tspan class="key">YTD run mi</tspan>:<tspan class="cc"> ....... </tspan><tspan class="value">333.3</tspan>
+    <tspan x="390" y="450" class="cc">. </tspan><tspan class="key">Activities</tspan>:<tspan class="cc"> .......... </tspan><tspan class="value">79</tspan><tspan class="cc" xml:space="preserve">     . </tspan><tspan class="key">Elev gain ft</tspan>:<tspan class="cc"> ..... </tspan><tspan class="value">47606</tspan>
+    <tspan x="390" y="470" class="cc">. </tspan><tspan class="key">Recent act</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">Mono County Hiking</tspan>
     <tspan x="390" y="490" class="cc">. </tspan><tspan class="key">Objective</tspan>:<tspan class="cc"> .................................. </tspan><tspan class="value">Mount Baker</tspan>
     <tspan x="390" y="510" class="cc">. </tspan><tspan class="key">Favorite trail</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">John Muir Trail</tspan>
     <tspan x="390" y="530"></tspan>
