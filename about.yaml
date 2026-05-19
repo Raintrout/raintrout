@@ -45,8 +45,7 @@ profile:
       - HEMA
 
   Stats:
-    - {YTD hike mi: "${stats.ytd.miles.hike}", YTD run mi: "${stats.ytd.miles.run}"}
-    - {Activities: "${stats.ytd.activity_counts.all}", Elev gain ft: "${stats.ytd.elevation_gain_feet.all}"}
-    - Recent act: "${stats.most_recent_activity.title}"
-    - Objective: Mount Baker
-    - Favorite trail: John Muir Trail
+    - {Miles (hiked): "${stats.ytd.miles.hike}", Miles (run): "${stats.ytd.miles.run}"}
+    - {Elevation Gain: "${stats.ytd.elevation_gain_feet.all}", YTD Activities: "${stats.ytd.activity_counts.all}"}
+    - Last Activity: "${stats.most_recent_activity.title}"
+    - Current Objective: Mount Baker
