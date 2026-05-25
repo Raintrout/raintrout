@@ -1,7 +1,7 @@
 {
   "data": {
-    "as_of": "2026-05-23",
-    "generated_at": "2026-05-23T08:32:21.586905+00:00",
+    "as_of": "2026-05-24",
+    "generated_at": "2026-05-24T08:45:37.564296+00:00",
     "monthly_miles": [
       {
         "all": 59.8,
@@ -32,43 +32,43 @@
         "walk": 2.1
       },
       {
-        "all": 127.1,
+        "all": 141.2,
         "hike": 33.9,
         "month": "2026-05",
-        "run": 86.0,
+        "run": 100.0,
         "walk": 7.2
       }
     ],
     "most_recent_activity": {
-      "date": "2026-05-22",
-      "duration_minutes": 85.1,
-      "elevation_gain_feet": 115,
-      "miles": 7.2,
-      "title": "Livermore - Anaerobic",
+      "date": "2026-05-23",
+      "duration_minutes": 160.1,
+      "elevation_gain_feet": 285,
+      "miles": 14.0,
+      "title": "Across the Arroyo Trail",
       "type": "run"
     },
     "status": "ok",
     "year": 2026,
     "ytd": {
       "activity_counts": {
-        "all": 83,
+        "all": 84,
         "hike": 18,
-        "run": 54,
+        "run": 55,
         "walk": 7
       },
       "elevation_gain_feet": {
-        "all": 48039,
+        "all": 48324,
         "hike": 20516,
-        "run": 5948,
+        "run": 6234,
         "walk": 436
       },
       "miles": {
-        "all": 560.9,
+        "all": 575.0,
         "hike": 113.2,
-        "run": 358.2,
+        "run": 372.3,
         "walk": 25.1
       }
     }
   },
-  "timestamp": "2026-05-24T06:54:40.968119+00:00"
+  "timestamp": "2026-05-25T08:13:05.874812+00:00"
 }
