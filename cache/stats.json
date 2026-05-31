@@ -1,7 +1,7 @@
 {
   "data": {
-    "as_of": "2026-05-28",
-    "generated_at": "2026-05-28T10:34:27.780300+00:00",
+    "as_of": "2026-05-30",
+    "generated_at": "2026-05-30T08:41:27.516073+00:00",
     "monthly_miles": [
       {
         "all": 59.8,
@@ -32,43 +32,43 @@
         "walk": 2.1
       },
       {
-        "all": 151.3,
+        "all": 167.2,
         "hike": 33.9,
         "month": "2026-05",
-        "run": 110.2,
-        "walk": 7.2
+        "run": 120.5,
+        "walk": 12.7
       }
     ],
     "most_recent_activity": {
-      "date": "2026-05-27",
+      "date": "2026-05-29",
       "duration_minutes": 114.1,
-      "elevation_gain_feet": 184,
-      "miles": 10.1,
-      "title": "Livermore Running",
+      "elevation_gain_feet": 171,
+      "miles": 10.4,
+      "title": "Arroyo Trail",
       "type": "run"
     },
     "status": "ok",
     "year": 2026,
     "ytd": {
       "activity_counts": {
-        "all": 85,
+        "all": 87,
         "hike": 18,
-        "run": 56,
-        "walk": 7
+        "run": 57,
+        "walk": 8
       },
       "elevation_gain_feet": {
-        "all": 48508,
+        "all": 48774,
         "hike": 20516,
-        "run": 6417,
-        "walk": 436
+        "run": 6588,
+        "walk": 531
       },
       "miles": {
-        "all": 585.1,
+        "all": 601.0,
         "hike": 113.2,
-        "run": 382.4,
-        "walk": 25.1
+        "run": 392.8,
+        "walk": 30.6
       }
     }
   },
-  "timestamp": "2026-05-29T07:48:18.457688+00:00"
+  "timestamp": "2026-05-31T07:39:15.035586+00:00"
 }
