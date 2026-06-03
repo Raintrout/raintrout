@@ -45,7 +45,7 @@ profile:
       - HEMA
 
   Stats:
-    - {Miles (hiked): "${stats.ytd.miles.hike}", Miles (run): "${stats.ytd.miles.run}"}
+    - {Miles (hiked): "${stats.ytd.miles.hike}", Miles (ran): "${stats.ytd.miles.run}"}
     - {Elevation Gain: "${stats.ytd.elevation_gain_feet.all}", YTD Activities: "${stats.ytd.activity_counts.all}"}
     - Last Activity: "${stats.most_recent_activity.title}"
     - Current Objective: Mount Baker
