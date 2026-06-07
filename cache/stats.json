@@ -1,7 +1,7 @@
 {
   "data": {
-    "as_of": "2026-06-05",
-    "generated_at": "2026-06-05T10:17:47.142187+00:00",
+    "as_of": "2026-06-06",
+    "generated_at": "2026-06-06T08:47:15.561708+00:00",
     "monthly_miles": [
       {
         "all": 59.8,
@@ -39,43 +39,43 @@
         "walk": 12.7
       },
       {
-        "all": 24.8,
+        "all": 32.9,
         "hike": 0.0,
         "month": "2026-06",
-        "run": 18.5,
+        "run": 26.7,
         "walk": 6.3
       }
     ],
     "most_recent_activity": {
-      "date": "2026-06-04",
-      "duration_minutes": 94.3,
+      "date": "2026-06-05",
+      "duration_minutes": 90.9,
       "elevation_gain_feet": 121,
-      "miles": 6.3,
-      "title": "Livermore Walking",
-      "type": "walk"
+      "miles": 8.2,
+      "title": "Livermore - Anaerobic",
+      "type": "run"
     },
     "status": "ok",
     "year": 2026,
     "ytd": {
       "activity_counts": {
-        "all": 92,
+        "all": 93,
         "hike": 20,
-        "run": 59,
+        "run": 60,
         "walk": 9
       },
       "elevation_gain_feet": {
-        "all": 54912,
+        "all": 55034,
         "hike": 26175,
-        "run": 6946,
+        "run": 7067,
         "walk": 653
       },
       "miles": {
-        "all": 647.1,
+        "all": 655.3,
         "hike": 134.6,
-        "run": 411.3,
+        "run": 419.4,
         "walk": 36.8
       }
     }
   },
-  "timestamp": "2026-06-06T06:48:16.306349+00:00"
+  "timestamp": "2026-06-07T07:48:52.482700+00:00"
 }

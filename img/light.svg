@@ -53,7 +53,7 @@ text, tspan {white-space: pre;}
 <text x="390" y="30" fill="#c9d1d9">
     <tspan x="390" y="30">steven@raintrout</tspan> ——————————————————————————————————————————
     <tspan x="390" y="50" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">OS X 14, Linux, Android 16</tspan>
-    <tspan x="390" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> .................................... </tspan><tspan class="value">28y 04mo 22d</tspan>
+    <tspan x="390" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> .................................... </tspan><tspan class="value">28y 04mo 23d</tspan>
     <tspan x="390" y="90" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ....................................... </tspan><tspan class="value">Synthpop.ai</tspan>
     <tspan x="390" y="110" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> .............................. </tspan><tspan class="value">Senior AI Engineer</tspan>
     <tspan x="390" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">Alacritty, VSCode, Claude</tspan>
@@ -71,9 +71,9 @@ text, tspan {white-space: pre;}
     <tspan x="390" y="370" class="cc">. </tspan><tspan class="key">Other</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value">Running, Astro, HEMA</tspan>
     <tspan x="390" y="390"></tspan>
     <tspan x="390" y="410">- Stats</tspan> ———————————————————————————————————————————————————
-    <tspan x="390" y="430" class="cc">. </tspan><tspan class="key">Miles (hiked)</tspan>:<tspan class="cc"> .... </tspan><tspan class="value">134.6</tspan><tspan class="cc" xml:space="preserve">     . </tspan><tspan class="key">Miles (ran)</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">411.3</tspan>
-    <tspan x="390" y="450" class="cc">. </tspan><tspan class="key">Elevation Gain</tspan>:<tspan class="cc"> ... </tspan><tspan class="value">54912</tspan><tspan class="cc" xml:space="preserve">     . </tspan><tspan class="key">YTD Activities</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">92</tspan>
-    <tspan x="390" y="470" class="cc">. </tspan><tspan class="key">Last Activity</tspan>:<tspan class="cc"> ........................ </tspan><tspan class="value">Livermore Walking</tspan>
+    <tspan x="390" y="430" class="cc">. </tspan><tspan class="key">Miles (hiked)</tspan>:<tspan class="cc"> .... </tspan><tspan class="value">134.6</tspan><tspan class="cc" xml:space="preserve">     . </tspan><tspan class="key">Miles (ran)</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">419.4</tspan>
+    <tspan x="390" y="450" class="cc">. </tspan><tspan class="key">Elevation Gain</tspan>:<tspan class="cc"> ... </tspan><tspan class="value">55034</tspan><tspan class="cc" xml:space="preserve">     . </tspan><tspan class="key">YTD Activities</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">93</tspan>
+    <tspan x="390" y="470" class="cc">. </tspan><tspan class="key">Last Activity</tspan>:<tspan class="cc"> .................... </tspan><tspan class="value">Livermore - Anaerobic</tspan>
     <tspan x="390" y="490" class="cc">. </tspan><tspan class="key">Current Objective</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">Mount Baker</tspan>
     <tspan x="390" y="510"></tspan>
 </text>
