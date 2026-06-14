@@ -1,7 +1,7 @@
 {
   "data": {
-    "as_of": "2026-06-12",
-    "generated_at": "2026-06-12T10:40:40.421561+00:00",
+    "as_of": "2026-06-13",
+    "generated_at": "2026-06-13T09:35:48.710865+00:00",
     "monthly_miles": [
       {
         "all": 59.8,
@@ -39,43 +39,43 @@
         "walk": 12.7
       },
       {
-        "all": 61.3,
+        "all": 69.5,
         "hike": 9.7,
         "month": "2026-06",
-        "run": 40.8,
+        "run": 49.0,
         "walk": 10.8
       }
     ],
     "most_recent_activity": {
-      "date": "2026-06-11",
-      "duration_minutes": 76.3,
-      "elevation_gain_feet": 161,
-      "miles": 7.0,
-      "title": "Pleasanton Foot Race ",
+      "date": "2026-06-12",
+      "duration_minutes": 97.5,
+      "elevation_gain_feet": 121,
+      "miles": 8.2,
+      "title": "Livermore Running",
       "type": "run"
     },
     "status": "ok",
     "year": 2026,
     "ytd": {
       "activity_counts": {
-        "all": 98,
+        "all": 99,
         "hike": 22,
-        "run": 62,
+        "run": 63,
         "walk": 10
       },
       "elevation_gain_feet": {
-        "all": 57419,
+        "all": 57540,
         "hike": 28098,
-        "run": 7418,
+        "run": 7539,
         "walk": 764
       },
       "miles": {
-        "all": 683.7,
+        "all": 691.8,
         "hike": 144.3,
-        "run": 433.6,
+        "run": 441.8,
         "walk": 41.4
       }
     }
   },
-  "timestamp": "2026-06-13T07:40:41.216985+00:00"
+  "timestamp": "2026-06-14T08:09:27.165676+00:00"
 }
