@@ -1,7 +1,7 @@
 {
   "data": {
-    "as_of": "2026-06-14",
-    "generated_at": "2026-06-14T09:56:53.210009+00:00",
+    "as_of": "2026-06-16",
+    "generated_at": "2026-06-16T11:36:34.794756+00:00",
     "monthly_miles": [
       {
         "all": 59.8,
@@ -39,43 +39,43 @@
         "walk": 12.7
       },
       {
-        "all": 69.5,
+        "all": 79.5,
         "hike": 9.7,
         "month": "2026-06",
-        "run": 49.0,
+        "run": 59.0,
         "walk": 10.8
       }
     ],
     "most_recent_activity": {
-      "date": "2026-06-12",
-      "duration_minutes": 97.5,
-      "elevation_gain_feet": 121,
-      "miles": 8.2,
-      "title": "Livermore Running",
+      "date": "2026-06-15",
+      "duration_minutes": 112.9,
+      "elevation_gain_feet": 203,
+      "miles": 10.0,
+      "title": "Hayward Running",
       "type": "run"
     },
     "status": "ok",
     "year": 2026,
     "ytd": {
       "activity_counts": {
-        "all": 99,
+        "all": 100,
         "hike": 22,
-        "run": 63,
+        "run": 64,
         "walk": 10
       },
       "elevation_gain_feet": {
-        "all": 57540,
+        "all": 57744,
         "hike": 28098,
-        "run": 7539,
+        "run": 7743,
         "walk": 764
       },
       "miles": {
-        "all": 691.8,
+        "all": 701.9,
         "hike": 144.3,
-        "run": 441.8,
+        "run": 451.8,
         "walk": 41.4
       }
     }
   },
-  "timestamp": "2026-06-15T09:53:22.138451+00:00"
+  "timestamp": "2026-06-17T08:54:30.595384+00:00"
 }
