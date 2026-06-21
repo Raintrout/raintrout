@@ -1,7 +1,7 @@
 {
   "data": {
-    "as_of": "2026-06-18",
-    "generated_at": "2026-06-18T10:49:09.843654+00:00",
+    "as_of": "2026-06-20",
+    "generated_at": "2026-06-20T09:44:12.085230+00:00",
     "monthly_miles": [
       {
         "all": 59.8,
@@ -39,43 +39,43 @@
         "walk": 12.7
       },
       {
-        "all": 87.7,
+        "all": 96.8,
         "hike": 9.7,
         "month": "2026-06",
-        "run": 67.2,
+        "run": 76.3,
         "walk": 10.8
       }
     ],
     "most_recent_activity": {
-      "date": "2026-06-17",
-      "duration_minutes": 98.2,
-      "elevation_gain_feet": 131,
-      "miles": 8.2,
-      "title": "Hayward Running",
+      "date": "2026-06-19",
+      "duration_minutes": 117.9,
+      "elevation_gain_feet": 180,
+      "miles": 9.1,
+      "title": "Hayward - Anaerobic",
       "type": "run"
     },
     "status": "ok",
     "year": 2026,
     "ytd": {
       "activity_counts": {
-        "all": 101,
+        "all": 102,
         "hike": 22,
-        "run": 65,
+        "run": 66,
         "walk": 10
       },
       "elevation_gain_feet": {
-        "all": 57875,
+        "all": 58055,
         "hike": 28098,
-        "run": 7874,
+        "run": 8054,
         "walk": 764
       },
       "miles": {
-        "all": 710.0,
+        "all": 719.1,
         "hike": 144.3,
-        "run": 460.0,
+        "run": 469.1,
         "walk": 41.4
       }
     }
   },
-  "timestamp": "2026-06-19T09:00:16.159121+00:00"
+  "timestamp": "2026-06-21T08:21:45.501627+00:00"
 }
