@@ -1,7 +1,7 @@
 {
   "data": {
-    "as_of": "2026-06-21",
-    "generated_at": "2026-06-21T10:06:32.102288+00:00",
+    "as_of": "2026-06-23",
+    "generated_at": "2026-06-23T10:04:17.201501+00:00",
     "monthly_miles": [
       {
         "all": 59.8,
@@ -39,43 +39,43 @@
         "walk": 12.7
       },
       {
-        "all": 96.8,
-        "hike": 9.7,
+        "all": 121.1,
+        "hike": 22.8,
         "month": "2026-06",
-        "run": 76.3,
+        "run": 87.5,
         "walk": 10.8
       }
     ],
     "most_recent_activity": {
-      "date": "2026-06-19",
-      "duration_minutes": 117.9,
-      "elevation_gain_feet": 180,
-      "miles": 9.1,
-      "title": "Hayward - Anaerobic",
+      "date": "2026-06-22",
+      "duration_minutes": 120.9,
+      "elevation_gain_feet": 194,
+      "miles": 11.2,
+      "title": "Livermore Running",
       "type": "run"
     },
     "status": "ok",
     "year": 2026,
     "ytd": {
       "activity_counts": {
-        "all": 102,
-        "hike": 22,
-        "run": 66,
+        "all": 106,
+        "hike": 25,
+        "run": 67,
         "walk": 10
       },
       "elevation_gain_feet": {
-        "all": 58055,
-        "hike": 28098,
-        "run": 8054,
+        "all": 61368,
+        "hike": 31217,
+        "run": 8248,
         "walk": 764
       },
       "miles": {
-        "all": 719.1,
-        "hike": 144.3,
-        "run": 469.1,
+        "all": 743.5,
+        "hike": 157.4,
+        "run": 480.2,
         "walk": 41.4
       }
     }
   },
-  "timestamp": "2026-06-22T09:40:08.671314+00:00"
+  "timestamp": "2026-06-24T07:33:43.212469+00:00"
 }
