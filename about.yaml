@@ -43,7 +43,6 @@ profile:
       - Running
       - Astro
       - HEMA
-
   Stats:
     - {Miles (hiked): "${stats.ytd.miles.hike}", Miles (ran): "${stats.ytd.miles.run}"}
     - {Elevation Gain: "${stats.ytd.elevation_gain_feet.all}", YTD Activities: "${stats.ytd.activity_counts.all}"}
