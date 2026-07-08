@@ -1,7 +1,7 @@
 {
   "data": {
-    "as_of": "2026-07-05",
-    "generated_at": "2026-07-05T09:23:30.035022+00:00",
+    "as_of": "2026-07-07",
+    "generated_at": "2026-07-07T10:01:36.468551+00:00",
     "monthly_miles": [
       {
         "all": 59.8,
@@ -46,43 +46,43 @@
         "walk": 10.8
       },
       {
-        "all": 5.1,
-        "hike": 0.0,
+        "all": 32.2,
+        "hike": 27.1,
         "month": "2026-07",
         "run": 5.1,
         "walk": 0.0
       }
     ],
     "most_recent_activity": {
-      "date": "2026-07-01",
-      "duration_minutes": 57.4,
-      "elevation_gain_feet": 82,
-      "miles": 5.1,
-      "title": "Livermore - Threshold",
-      "type": "run"
+      "date": "2026-07-05",
+      "duration_minutes": 283.7,
+      "elevation_gain_feet": 1253,
+      "miles": 9.2,
+      "title": "Baxter Pass Reverse",
+      "type": "hike"
     },
     "status": "ok",
     "year": 2026,
     "ytd": {
       "activity_counts": {
-        "all": 109,
-        "hike": 25,
+        "all": 112,
+        "hike": 28,
         "run": 70,
         "walk": 10
       },
       "elevation_gain_feet": {
-        "all": 61818,
-        "hike": 31217,
+        "all": 71037,
+        "hike": 40437,
         "run": 8698,
         "walk": 764
       },
       "miles": {
-        "all": 768.8,
-        "hike": 157.4,
+        "all": 795.9,
+        "hike": 184.5,
         "run": 505.6,
         "walk": 41.4
       }
     }
   },
-  "timestamp": "2026-07-06T08:12:53.599841+00:00"
+  "timestamp": "2026-07-08T06:22:11.570467+00:00"
 }
