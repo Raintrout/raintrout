@@ -1,7 +1,7 @@
 {
   "data": {
-    "as_of": "2026-07-08",
-    "generated_at": "2026-07-08T08:44:55.307902+00:00",
+    "as_of": "2026-07-10",
+    "generated_at": "2026-07-10T09:53:57.251252+00:00",
     "monthly_miles": [
       {
         "all": 59.8,
@@ -46,43 +46,43 @@
         "walk": 10.8
       },
       {
-        "all": 32.2,
+        "all": 42.2,
         "hike": 27.1,
         "month": "2026-07",
-        "run": 5.1,
+        "run": 15.1,
         "walk": 0.0
       }
     ],
     "most_recent_activity": {
-      "date": "2026-07-05",
-      "duration_minutes": 283.7,
-      "elevation_gain_feet": 1253,
-      "miles": 9.2,
-      "title": "Baxter Pass Reverse",
-      "type": "hike"
+      "date": "2026-07-08",
+      "duration_minutes": 111.3,
+      "elevation_gain_feet": 200,
+      "miles": 10.0,
+      "title": "Livermore - VO2 Max",
+      "type": "run"
     },
     "status": "ok",
     "year": 2026,
     "ytd": {
       "activity_counts": {
-        "all": 112,
+        "all": 113,
         "hike": 28,
-        "run": 70,
+        "run": 71,
         "walk": 10
       },
       "elevation_gain_feet": {
-        "all": 71037,
+        "all": 71237,
         "hike": 40437,
-        "run": 8698,
+        "run": 8898,
         "walk": 764
       },
       "miles": {
-        "all": 795.9,
+        "all": 805.9,
         "hike": 184.5,
-        "run": 505.6,
+        "run": 515.6,
         "walk": 41.4
       }
     }
   },
-  "timestamp": "2026-07-09T07:30:55.132604+00:00"
+  "timestamp": "2026-07-11T06:07:20.594470+00:00"
 }
