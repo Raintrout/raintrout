@@ -1,7 +1,7 @@
 {
   "data": {
-    "as_of": "2026-07-10",
-    "generated_at": "2026-07-10T09:53:57.251252+00:00",
+    "as_of": "2026-07-11",
+    "generated_at": "2026-07-11T08:15:22.413852+00:00",
     "monthly_miles": [
       {
         "all": 59.8,
@@ -46,43 +46,43 @@
         "walk": 10.8
       },
       {
-        "all": 42.2,
+        "all": 51.4,
         "hike": 27.1,
         "month": "2026-07",
-        "run": 15.1,
+        "run": 24.2,
         "walk": 0.0
       }
     ],
     "most_recent_activity": {
-      "date": "2026-07-08",
-      "duration_minutes": 111.3,
-      "elevation_gain_feet": 200,
-      "miles": 10.0,
-      "title": "Livermore - VO2 Max",
+      "date": "2026-07-10",
+      "duration_minutes": 113.1,
+      "elevation_gain_feet": 154,
+      "miles": 9.1,
+      "title": "Livermore - Base",
       "type": "run"
     },
     "status": "ok",
     "year": 2026,
     "ytd": {
       "activity_counts": {
-        "all": 113,
+        "all": 114,
         "hike": 28,
-        "run": 71,
+        "run": 72,
         "walk": 10
       },
       "elevation_gain_feet": {
-        "all": 71237,
+        "all": 71391,
         "hike": 40437,
-        "run": 8898,
+        "run": 9052,
         "walk": 764
       },
       "miles": {
-        "all": 805.9,
+        "all": 815.1,
         "hike": 184.5,
-        "run": 515.6,
+        "run": 524.7,
         "walk": 41.4
       }
     }
   },
-  "timestamp": "2026-07-11T06:07:20.594470+00:00"
+  "timestamp": "2026-07-12T06:26:38.058719+00:00"
 }
