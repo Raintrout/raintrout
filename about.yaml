@@ -6,7 +6,7 @@ profile:
     OS:
       - OS X 14
       - Linux
-      - Android 16
+      - Android 17
     Uptime: auto
     Host: Synthpop.ai
     Kernel: Senior AI Engineer
