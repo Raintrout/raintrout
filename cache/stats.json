@@ -1,7 +1,7 @@
 {
   "data": {
-    "as_of": "2026-07-22",
-    "generated_at": "2026-07-22T08:45:58.351889+00:00",
+    "as_of": "2026-07-24",
+    "generated_at": "2026-07-24T08:43:57.622368+00:00",
     "monthly_miles": [
       {
         "all": 59.8,
@@ -46,43 +46,43 @@
         "walk": 10.8
       },
       {
-        "all": 91.7,
+        "all": 97.6,
         "hike": 27.1,
         "month": "2026-07",
-        "run": 64.6,
+        "run": 70.5,
         "walk": 0.0
       }
     ],
     "most_recent_activity": {
-      "date": "2026-07-18",
-      "duration_minutes": 516.5,
-      "elevation_gain_feet": 7759,
-      "miles": 30.0,
-      "title": "Ohlone Wilderness Trail",
+      "date": "2026-07-22",
+      "duration_minutes": 72.9,
+      "elevation_gain_feet": 79,
+      "miles": 5.9,
+      "title": "Livermore Running",
       "type": "run"
     },
     "status": "ok",
     "year": 2026,
     "ytd": {
       "activity_counts": {
-        "all": 116,
+        "all": 117,
         "hike": 28,
-        "run": 74,
+        "run": 75,
         "walk": 10
       },
       "elevation_gain_feet": {
-        "all": 79324,
+        "all": 79403,
         "hike": 40437,
-        "run": 16985,
+        "run": 17063,
         "walk": 764
       },
       "miles": {
-        "all": 855.4,
+        "all": 861.3,
         "hike": 184.5,
-        "run": 565.1,
+        "run": 571.0,
         "walk": 41.4
       }
     }
   },
-  "timestamp": "2026-07-23T06:24:22.343780+00:00"
+  "timestamp": "2026-07-25T06:10:03.031853+00:00"
 }
