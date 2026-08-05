@@ -1,7 +1,7 @@
 {
   "data": {
-    "as_of": "2026-08-02",
-    "generated_at": "2026-08-02T08:37:36.698484+00:00",
+    "as_of": "2026-08-04",
+    "generated_at": "2026-08-04T09:10:12.160207+00:00",
     "monthly_miles": [
       {
         "all": 59.8,
@@ -65,7 +65,7 @@
       "duration_minutes": 159.8,
       "elevation_gain_feet": 89,
       "miles": 4.6,
-      "title": "Whatcom County Hiking",
+      "title": "Mt. Baker Deproach",
       "type": "hike"
     },
     "status": "ok",
@@ -91,5 +91,5 @@
       }
     }
   },
-  "timestamp": "2026-08-03T06:52:40.945754+00:00"
+  "timestamp": "2026-08-05T06:20:36.222092+00:00"
 }
