@@ -1,7 +1,7 @@
 {
   "data": {
-    "as_of": "2026-08-05",
-    "generated_at": "2026-08-05T09:07:37.100871+00:00",
+    "as_of": "2026-08-07",
+    "generated_at": "2026-08-07T07:43:21.678557+00:00",
     "monthly_miles": [
       {
         "all": 59.8,
@@ -53,43 +53,43 @@
         "walk": 0.0
       },
       {
-        "all": 4.6,
+        "all": 10.8,
         "hike": 4.6,
         "month": "2026-08",
-        "run": 0.0,
+        "run": 6.3,
         "walk": 0.0
       }
     ],
     "most_recent_activity": {
-      "date": "2026-08-01",
-      "duration_minutes": 159.8,
-      "elevation_gain_feet": 89,
-      "miles": 4.6,
-      "title": "Mt. Baker Deproach",
-      "type": "hike"
+      "date": "2026-08-05",
+      "duration_minutes": 72.5,
+      "elevation_gain_feet": 98,
+      "miles": 6.3,
+      "title": "Livermore - Base",
+      "type": "run"
     },
     "status": "ok",
     "year": 2026,
     "ytd": {
       "activity_counts": {
-        "all": 120,
+        "all": 121,
         "hike": 31,
-        "run": 75,
+        "run": 76,
         "walk": 10
       },
       "elevation_gain_feet": {
-        "all": 87031,
+        "all": 87129,
         "hike": 48065,
-        "run": 17063,
+        "run": 17162,
         "walk": 764
       },
       "miles": {
-        "all": 877.6,
+        "all": 883.9,
         "hike": 200.8,
-        "run": 571.0,
+        "run": 577.3,
         "walk": 41.4
       }
     }
   },
-  "timestamp": "2026-08-06T06:23:12.697671+00:00"
+  "timestamp": "2026-08-08T04:47:41.968073+00:00"
 }
