@@ -68,7 +68,7 @@ text, tspan {white-space: pre;}
     <tspan x="390" y="310">- Hobbies</tspan> —————————————————————————————————————————————————
     <tspan x="390" y="330" class="cc">. </tspan><tspan class="key">Outdoors</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">Backpacking, Photography, Hiking</tspan>
     <tspan x="390" y="350" class="cc">. </tspan><tspan class="key">Games</tspan>:<tspan class="cc"> ....... </tspan><tspan class="value">Magic the Gathering, Dungeons and Dragons,</tspan>
-    <tspan x="390" y="350" class="cc">. </tspan><tspan class="cc"> ............ </tspan><tspan class="value">Slay the Spire, Spirit Island, Mystic Vale</tspan>
+    <tspan x="390" y="370" class="cc">. </tspan><tspan class="cc"> ............. </tspan><tspan class="value">Slay the Spire, Spirit Island, Mystic Vale</tspan>
     <tspan x="390" y="390" class="cc">. </tspan><tspan class="key">Other</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value">Running, Astro, HEMA</tspan>
     <tspan x="390" y="410"></tspan>
     <tspan x="390" y="430">- Stats</tspan> ———————————————————————————————————————————————————

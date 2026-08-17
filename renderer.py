@@ -98,13 +98,13 @@ def _section_header_line(header: str, *, x: int, y: int, line_length: int, is_fi
     return tspan(label, x=x, y=y) + " " + "—" * padding
 
 
-def _regular_line(item: Line, *, x: int, y: int, line_length: int) -> Iterable[str]:
+def _regular_line(item: Line, *, x: int, y: int, line_length: int, line_height: int) -> Iterable[str]:
     key = '.'.join(item.key)
     value = item.value
     rendered_key = render_key(item.key)
 
     if len(value) + len(key) <= line_length - 10:
-        dots = "." * (line_length - 5 - len(key) - len(value))
+        dots = "." * max(1, line_length - 5 - len(key) - len(value))
         yield (
             tspan(". ", x=x, y=y, cls="cc")
             + f"{rendered_key}:"
@@ -115,7 +115,7 @@ def _regular_line(item: Line, *, x: int, y: int, line_length: int) -> Iterable[s
 
     for value_index, part in enumerate(split_value(value, line_length - 5 - len(key))):
         if value_index == 0:
-            dots = "." * (line_length - 5 - len(key) - len(part))
+            dots = "." * max(1, line_length - 5 - len(key) - len(part))
             yield (
                 tspan(". ", x=x, y=y, cls="cc")
                 + f"{rendered_key}:"
@@ -123,17 +123,20 @@ def _regular_line(item: Line, *, x: int, y: int, line_length: int) -> Iterable[s
                 + tspan(part, cls="value")
             )
         else:
-            dots = "." * (line_length - 5 - len(part))
+            dots = "." * max(1, line_length - 4 - len(part))
             yield (
                 tspan(". ", x=x, y=y, cls="cc")
                 + tspan(f" {dots} ", cls="cc")
                 + tspan(part, cls="value")
             )
+        y += line_height
 
 
-def _column_row(row: ColumnRow, *, x: int, y: int, line_length: int) -> list[str]:
+def _column_row(row: ColumnRow, *, x: int, y: int, line_length: int, line_height: int) -> list[str]:
     if len(row.cells) == 1:
-        return list(_regular_line(row.cells[0], x=x, y=y, line_length=line_length))
+        return list(_regular_line(
+            row.cells[0], x=x, y=y, line_length=line_length, line_height=line_height,
+        ))
 
     n = len(row.cells)
     col_width = (line_length - COLUMN_GUTTER * (n - 1)) // n
@@ -280,11 +283,17 @@ def render(
                 work_entries.extend(block_entries)
                 work_line_end_y = offset_y - WORK_MARKER_Y_OFFSET
             elif isinstance(item, ColumnRow):
-                for svg in _column_row(item, x=offset_x, y=offset_y, line_length=line_length):
+                for svg in _column_row(
+                    item, x=offset_x, y=offset_y,
+                    line_length=line_length, line_height=line_height,
+                ):
                     lines.append(svg)
                     offset_y += line_height
             else:
-                for svg in _regular_line(item, x=offset_x, y=offset_y, line_length=line_length):
+                for svg in _regular_line(
+                    item, x=offset_x, y=offset_y,
+                    line_length=line_length, line_height=line_height,
+                ):
                     lines.append(svg)
                     offset_y += line_height
 
