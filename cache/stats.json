@@ -1,7 +1,7 @@
 {
   "data": {
-    "as_of": "2026-10-09",
-    "generated_at": "2026-10-09T13:22:30.752585+00:00",
+    "as_of": "2026-10-10",
+    "generated_at": "2026-10-10T12:37:13.183302+00:00",
     "monthly_miles": [
       {
         "all": 59.8,
@@ -67,16 +67,16 @@
         "walk": 3.1
       },
       {
-        "all": 21.2,
+        "all": 26.3,
         "hike": 0.0,
         "month": "2026-10",
-        "run": 16.7,
+        "run": 21.8,
         "walk": 4.5
       }
     ],
     "most_recent_activity": {
-      "date": "2026-10-07",
-      "duration_minutes": 59.6,
+      "date": "2026-10-09",
+      "duration_minutes": 58.8,
       "elevation_gain_feet": 72,
       "miles": 5.1,
       "title": "Livermore Running",
@@ -86,24 +86,24 @@
     "year": 2026,
     "ytd": {
       "activity_counts": {
-        "all": 149,
+        "all": 150,
         "hike": 36,
-        "run": 95,
+        "run": 96,
         "walk": 14
       },
       "elevation_gain_feet": {
-        "all": 98367,
+        "all": 98439,
         "hike": 56736,
-        "run": 19337,
+        "run": 19409,
         "walk": 1155
       },
       "miles": {
-        "all": 1081.2,
+        "all": 1086.3,
         "hike": 243.4,
-        "run": 712.0,
+        "run": 717.1,
         "walk": 61.3
       }
     }
   },
-  "timestamp": "2026-10-10T10:19:06.910762+00:00"
+  "timestamp": "2026-10-11T10:27:58.639417+00:00"
 }
