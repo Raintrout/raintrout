@@ -1,7 +1,7 @@
 {
   "data": {
-    "as_of": "2026-10-13",
-    "generated_at": "2026-10-13T14:16:51.118015+00:00",
+    "as_of": "2026-10-15",
+    "generated_at": "2026-10-15T11:35:08.541871+00:00",
     "monthly_miles": [
       {
         "all": 59.8,
@@ -67,43 +67,43 @@
         "walk": 3.1
       },
       {
-        "all": 29.7,
+        "all": 34.9,
         "hike": 3.4,
         "month": "2026-10",
-        "run": 21.8,
+        "run": 26.9,
         "walk": 4.5
       }
     ],
     "most_recent_activity": {
-      "date": "2026-10-10",
-      "duration_minutes": 78.2,
-      "elevation_gain_feet": 915,
-      "miles": 3.4,
-      "title": "Contra Costa County Hiking",
-      "type": "hike"
+      "date": "2026-10-14",
+      "duration_minutes": 50.8,
+      "elevation_gain_feet": 79,
+      "miles": 5.1,
+      "title": "Livermore - Threshold",
+      "type": "run"
     },
     "status": "ok",
     "year": 2026,
     "ytd": {
       "activity_counts": {
-        "all": 151,
+        "all": 152,
         "hike": 37,
-        "run": 96,
+        "run": 97,
         "walk": 14
       },
       "elevation_gain_feet": {
-        "all": 99354,
+        "all": 99433,
         "hike": 57652,
-        "run": 19409,
+        "run": 19488,
         "walk": 1155
       },
       "miles": {
-        "all": 1089.7,
+        "all": 1094.8,
         "hike": 246.8,
-        "run": 717.1,
+        "run": 722.3,
         "walk": 61.3
       }
     }
   },
-  "timestamp": "2026-10-14T09:10:19.429950+00:00"
+  "timestamp": "2026-10-16T02:38:28.383989+00:00"
 }
