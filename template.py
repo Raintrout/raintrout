@@ -18,6 +18,7 @@ def render_svg(
     stats_y: int,
     stats_text_color: str,
     lines: list[str],
+    meteors_svg: str = "",
     **_ignored: object,
 ) -> str:
     ascii_tspans = "\n".join(
@@ -40,7 +41,8 @@ def render_svg(
         "<!-- image size (375,500) maybe add tarot card or something here in the future-->\n"
         f"{ascii_tspans}\n"
         "</text>\n"
-        f'<path d="{mountain_path}" fill="{mountain_color}"/>\n'
+        + (f"{meteors_svg}\n" if meteors_svg else "")
+        + f'<path d="{mountain_path}" fill="{mountain_color}"/>\n'
         f"{work_timeline_svg}\n"
         f'<text x="{stats_x}" y="{stats_y}" fill="{stats_text_color}">\n'
         f"{stat_lines}\n"

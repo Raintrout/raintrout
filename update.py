@@ -9,6 +9,7 @@ from typing import Any
 import yaml
 
 import providers
+from meteors import render_meteors
 from renderer import render
 from sections import get_sections
 from template import render_svg
@@ -22,6 +23,9 @@ from stars import (
     WIDTH,
     render_sky,
 )
+
+# SVG pixel box spanned by the ASCII sky (x0, y0, x1, y1): 40 cols * ~9.76px, 25 rows * 20px.
+METEOR_BOX = (15, 25, 396, 505)
 
 TEMPLATE_RE = re.compile(r'^\$\{([^.}]+)\.([^}]+)\}$')
 
@@ -189,9 +193,21 @@ def main() -> None:
         WIDTH, HEIGHT, MAG_LIMIT,
     )
 
+    meteor_date = os.environ.get("METEOR_DATE")
+    today = date.fromisoformat(meteor_date) if meteor_date else date.today()
+
     for name, style_cfg in style.items():
         print(f'generating image for {name}.svg')
         render_style = build_render_style(style_cfg, profile)
+        render_style["meteors_svg"] = render_meteors(
+            today,
+            box=METEOR_BOX,
+            color=render_style.get("meteor_color", render_style["text_color"]),
+            ra_center=RA_CENTER,
+            dec_center=DEC_CENTER,
+            fov_ra=FOV_RA_DEG,
+            fov_dec=FOV_DEC_DEG,
+        )
         with open(f'img/{name}.svg', 'w', encoding="utf8") as output:
             output.write(
                 render_svg(
