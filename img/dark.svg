@@ -45,31 +45,22 @@ text, tspan {white-space: pre;}
    <tspan x="15" y="490">                   .                    </tspan>
    <tspan x="15" y="510">                                        </tspan>
 </text>
-<!-- meteors: S. Delta Aquariids, Perseids -->
+<!-- meteors: S. Taurids, N. Taurids, Leonids -->
 <style>
-@keyframes meteor0 { 0% {transform: translate(0px, 0px); opacity: 0} 0.52% {opacity: 1} 3.49% {transform: translate(76.2px, -34.6px); opacity: 0} 100% {transform: translate(76.2px, -34.6px); opacity: 0} }
-@keyframes meteor1 { 0% {transform: translate(0px, 0px); opacity: 0} 0.53% {opacity: 1} 3.53% {transform: translate(17.9px, 110.2px); opacity: 0} 100% {transform: translate(17.9px, 110.2px); opacity: 0} }
-@keyframes meteor2 { 0% {transform: translate(0px, 0px); opacity: 0} 0.42% {opacity: 1} 2.80% {transform: translate(17.5px, 71.9px); opacity: 0} 100% {transform: translate(17.5px, 71.9px); opacity: 0} }
-@keyframes meteor3 { 0% {transform: translate(0px, 0px); opacity: 0} 0.97% {opacity: 1} 6.46% {transform: translate(1.1px, 86.1px); opacity: 0} 100% {transform: translate(1.1px, 86.1px); opacity: 0} }
-@keyframes meteor4 { 0% {transform: translate(0px, 0px); opacity: 0} 0.48% {opacity: 1} 3.23% {transform: translate(0.9px, 63.1px); opacity: 0} 100% {transform: translate(0.9px, 63.1px); opacity: 0} }
-@keyframes meteor5 { 0% {transform: translate(0px, 0px); opacity: 0} 1.31% {opacity: 1} 8.76% {transform: translate(13.2px, 76.4px); opacity: 0} 100% {transform: translate(13.2px, 76.4px); opacity: 0} }
+@keyframes meteor0 { 0% {transform: translate(0px, 0px); opacity: 0} 0.69% {opacity: 1} 4.59% {transform: translate(70.0px, -35.7px); opacity: 0} 100% {transform: translate(70.0px, -35.7px); opacity: 0} }
+@keyframes meteor1 { 0% {transform: translate(0px, 0px); opacity: 0} 0.78% {opacity: 1} 5.19% {transform: translate(-20.2px, -66.2px); opacity: 0} 100% {transform: translate(-20.2px, -66.2px); opacity: 0} }
+@keyframes meteor2 { 0% {transform: translate(0px, 0px); opacity: 0} 0.45% {opacity: 1} 3.02% {transform: translate(-109.5px, 46.8px); opacity: 0} 100% {transform: translate(-109.5px, 46.8px); opacity: 0} }
 .meteor {opacity: 0;}
 @media (prefers-reduced-motion: reduce) {.meteor {animation: none !important;}}
 </style>
 <defs>
-<linearGradient id="meteorGrad0" gradientUnits="userSpaceOnUse" x1="-48.9" y1="22.2" x2="0" y2="0"><stop offset="0" stop-color="#e6edf3" stop-opacity="0"/><stop offset="1" stop-color="#e6edf3" stop-opacity="1"/></linearGradient>
-<linearGradient id="meteorGrad1" gradientUnits="userSpaceOnUse" x1="-12.4" y1="-76.5" x2="0" y2="0"><stop offset="0" stop-color="#e6edf3" stop-opacity="0"/><stop offset="1" stop-color="#e6edf3" stop-opacity="1"/></linearGradient>
-<linearGradient id="meteorGrad2" gradientUnits="userSpaceOnUse" x1="-14.6" y1="-59.8" x2="0" y2="0"><stop offset="0" stop-color="#e6edf3" stop-opacity="0"/><stop offset="1" stop-color="#e6edf3" stop-opacity="1"/></linearGradient>
-<linearGradient id="meteorGrad3" gradientUnits="userSpaceOnUse" x1="-1.0" y1="-83.2" x2="0" y2="0"><stop offset="0" stop-color="#e6edf3" stop-opacity="0"/><stop offset="1" stop-color="#e6edf3" stop-opacity="1"/></linearGradient>
-<linearGradient id="meteorGrad4" gradientUnits="userSpaceOnUse" x1="-0.8" y1="-57.8" x2="0" y2="0"><stop offset="0" stop-color="#e6edf3" stop-opacity="0"/><stop offset="1" stop-color="#e6edf3" stop-opacity="1"/></linearGradient>
-<linearGradient id="meteorGrad5" gradientUnits="userSpaceOnUse" x1="-11.5" y1="-66.6" x2="0" y2="0"><stop offset="0" stop-color="#e6edf3" stop-opacity="0"/><stop offset="1" stop-color="#e6edf3" stop-opacity="1"/></linearGradient>
+<linearGradient id="meteorGrad0" gradientUnits="userSpaceOnUse" x1="-37.9" y1="19.3" x2="0" y2="0"><stop offset="0" stop-color="#e6edf3" stop-opacity="0"/><stop offset="1" stop-color="#e6edf3" stop-opacity="1"/></linearGradient>
+<linearGradient id="meteorGrad1" gradientUnits="userSpaceOnUse" x1="13.2" y1="43.1" x2="0" y2="0"><stop offset="0" stop-color="#e6edf3" stop-opacity="0"/><stop offset="1" stop-color="#e6edf3" stop-opacity="1"/></linearGradient>
+<linearGradient id="meteorGrad2" gradientUnits="userSpaceOnUse" x1="37.5" y1="-16.0" x2="0" y2="0"><stop offset="0" stop-color="#e6edf3" stop-opacity="0"/><stop offset="1" stop-color="#e6edf3" stop-opacity="1"/></linearGradient>
 </defs>
-<g transform="translate(229.8 131.7)"><g class="meteor" style="animation: meteor0 17.6s linear 6.0s infinite both"><line x1="-48.9" y1="22.2" x2="0" y2="0" stroke="url(#meteorGrad0)" stroke-width="1.5" stroke-linecap="round"/></g></g>
-<g transform="translate(270.9 161.8)"><g class="meteor" style="animation: meteor1 20.6s linear 7.8s infinite both"><line x1="-12.4" y1="-76.5" x2="0" y2="0" stroke="url(#meteorGrad1)" stroke-width="1.5" stroke-linecap="round"/></g></g>
-<g transform="translate(121.2 270.1)"><g class="meteor" style="animation: meteor2 22.6s linear 1.8s infinite both"><line x1="-14.6" y1="-59.8" x2="0" y2="0" stroke="url(#meteorGrad2)" stroke-width="1.5" stroke-linecap="round"/></g></g>
-<g transform="translate(176.5 39.5)"><g class="meteor" style="animation: meteor3 12.8s linear 1.5s infinite both"><line x1="-1.0" y1="-83.2" x2="0" y2="0" stroke="url(#meteorGrad3)" stroke-width="1.5" stroke-linecap="round"/></g></g>
-<g transform="translate(340.6 102.5)"><g class="meteor" style="animation: meteor4 21.4s linear 16.1s infinite both"><line x1="-0.8" y1="-57.8" x2="0" y2="0" stroke="url(#meteorGrad4)" stroke-width="1.5" stroke-linecap="round"/></g></g>
-<g transform="translate(143.0 327.9)"><g class="meteor" style="animation: meteor5 10.6s linear 7.5s infinite both"><line x1="-11.5" y1="-66.6" x2="0" y2="0" stroke="url(#meteorGrad5)" stroke-width="1.5" stroke-linecap="round"/></g></g>
+<g transform="translate(76.3 350.8)"><g class="meteor" style="animation: meteor0 21.0s linear 1.7s infinite both"><line x1="-37.9" y1="19.3" x2="0" y2="0" stroke="url(#meteorGrad0)" stroke-width="1.5" stroke-linecap="round"/></g></g>
+<g transform="translate(117.5 188.7)"><g class="meteor" style="animation: meteor1 16.2s linear 15.6s infinite both"><line x1="13.2" y1="43.1" x2="0" y2="0" stroke="url(#meteorGrad1)" stroke-width="1.5" stroke-linecap="round"/></g></g>
+<g transform="translate(330.7 107.5)"><g class="meteor" style="animation: meteor2 23.6s linear 19.1s infinite both"><line x1="37.5" y1="-16.0" x2="0" y2="0" stroke="url(#meteorGrad2)" stroke-width="1.5" stroke-linecap="round"/></g></g>
 <path d="M 15 530 L 15 528 L 30 527 L 44 525 L 58 522 L 72 518 L 86 512 L 100 504 L 114 493 L 126 482 L 138 489 L 150 478 L 162 467 L 174 477 L 186 464 L 198 480 L 210 460 L 222 474 L 234 456 L 246 480 L 258 461 L 270 487 L 282 468 L 294 494 L 308 482 L 324 491 L 340 499 L 356 506 L 372 512 L 390 515 L 420 517 L 455 513 L 490 516 L 530 510 L 575 517 L 620 511 L 668 518 L 720 512 L 774 519 L 830 514 L 888 520 L 940 516 L 970 522 L 970 530 Z" fill="#8b949e"/>
 <line x1="398" y1="204" x2="398" y2="284" stroke="#616e7f" stroke-width="2"/>
 <circle cx="398" cy="204" r="4" class="currentWorkColor"/>
@@ -97,9 +88,9 @@ text, tspan {white-space: pre;}
     <tspan x="390" y="390" class="cc">. </tspan><tspan class="key">Other</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value">Running, Astro, HEMA</tspan>
     <tspan x="390" y="410"></tspan>
     <tspan x="390" y="430">- Stats</tspan> ———————————————————————————————————————————————————
-    <tspan x="390" y="450" class="cc">. </tspan><tspan class="key">Miles (hiked)</tspan>:<tspan class="cc"> .... </tspan><tspan class="value">246.8</tspan><tspan class="cc" xml:space="preserve">     . </tspan><tspan class="key">Miles (ran)</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">742.2</tspan>
-    <tspan x="390" y="470" class="cc">. </tspan><tspan class="key">Elevation Gain</tspan>:<tspan class="cc"> ... </tspan><tspan class="value">99863</tspan><tspan class="cc" xml:space="preserve">     . </tspan><tspan class="key">YTD Activities</tspan>:<tspan class="cc"> ..... </tspan><tspan class="value">157</tspan>
-    <tspan x="390" y="490" class="cc">. </tspan><tspan class="key">Last Activity</tspan>:<tspan class="cc"> ........................ </tspan><tspan class="value">Livermore Walking</tspan>
+    <tspan x="390" y="450" class="cc">. </tspan><tspan class="key">Miles (hiked)</tspan>:<tspan class="cc"> .... </tspan><tspan class="value">246.8</tspan><tspan class="cc" xml:space="preserve">     . </tspan><tspan class="key">Miles (ran)</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">748.6</tspan>
+    <tspan x="390" y="470" class="cc">. </tspan><tspan class="key">Elevation Gain</tspan>:<tspan class="cc"> .. </tspan><tspan class="value">100063</tspan><tspan class="cc" xml:space="preserve">     . </tspan><tspan class="key">YTD Activities</tspan>:<tspan class="cc"> ..... </tspan><tspan class="value">159</tspan>
+    <tspan x="390" y="490" class="cc">. </tspan><tspan class="key">Last Activity</tspan>:<tspan class="cc"> ....................... </tspan><tspan class="value">Pleasanton Walking</tspan>
     <tspan x="390" y="510" class="cc">. </tspan><tspan class="key">Current Objective</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">Livermore Half Marathon</tspan>
     <tspan x="390" y="530"></tspan>
 </text>
