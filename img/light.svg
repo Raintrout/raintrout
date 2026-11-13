@@ -47,20 +47,20 @@ text, tspan {white-space: pre;}
 </text>
 <!-- meteors: S. Taurids, N. Taurids, Leonids -->
 <style>
-@keyframes meteor0 { 0% {transform: translate(0px, 0px); opacity: 0} 0.63% {opacity: 1} 4.20% {transform: translate(101.0px, -51.9px); opacity: 0} 100% {transform: translate(101.0px, -51.9px); opacity: 0} }
-@keyframes meteor1 { 0% {transform: translate(0px, 0px); opacity: 0} 0.53% {opacity: 1} 3.56% {transform: translate(-32.0px, -88.6px); opacity: 0} 100% {transform: translate(-32.0px, -88.6px); opacity: 0} }
-@keyframes meteor2 { 0% {transform: translate(0px, 0px); opacity: 0} 0.84% {opacity: 1} 5.63% {transform: translate(-64.9px, 36.9px); opacity: 0} 100% {transform: translate(-64.9px, 36.9px); opacity: 0} }
+@keyframes meteor0 { 0% {transform: translate(0px, 0px); opacity: 0} 0.50% {opacity: 1} 3.36% {transform: translate(58.2px, -27.7px); opacity: 0} 100% {transform: translate(58.2px, -27.7px); opacity: 0} }
+@keyframes meteor1 { 0% {transform: translate(0px, 0px); opacity: 0} 0.42% {opacity: 1} 2.78% {transform: translate(-29.8px, -100.7px); opacity: 0} 100% {transform: translate(-29.8px, -100.7px); opacity: 0} }
+@keyframes meteor2 { 0% {transform: translate(0px, 0px); opacity: 0} 0.86% {opacity: 1} 5.76% {transform: translate(-80.5px, 37.6px); opacity: 0} 100% {transform: translate(-80.5px, 37.6px); opacity: 0} }
 .meteor {opacity: 0;}
 @media (prefers-reduced-motion: reduce) {.meteor {animation: none !important;}}
 </style>
 <defs>
-<linearGradient id="meteorGrad0" gradientUnits="userSpaceOnUse" x1="-62.1" y1="31.9" x2="0" y2="0"><stop offset="0" stop-color="#57606a" stop-opacity="0"/><stop offset="1" stop-color="#57606a" stop-opacity="1"/></linearGradient>
-<linearGradient id="meteorGrad1" gradientUnits="userSpaceOnUse" x1="17.2" y1="47.5" x2="0" y2="0"><stop offset="0" stop-color="#57606a" stop-opacity="0"/><stop offset="1" stop-color="#57606a" stop-opacity="1"/></linearGradient>
-<linearGradient id="meteorGrad2" gradientUnits="userSpaceOnUse" x1="56.2" y1="-31.9" x2="0" y2="0"><stop offset="0" stop-color="#57606a" stop-opacity="0"/><stop offset="1" stop-color="#57606a" stop-opacity="1"/></linearGradient>
+<linearGradient id="meteorGrad0" gradientUnits="userSpaceOnUse" x1="-64.6" y1="30.7" x2="0" y2="0"><stop offset="0" stop-color="#57606a" stop-opacity="0"/><stop offset="1" stop-color="#57606a" stop-opacity="1"/></linearGradient>
+<linearGradient id="meteorGrad1" gradientUnits="userSpaceOnUse" x1="16.2" y1="54.6" x2="0" y2="0"><stop offset="0" stop-color="#57606a" stop-opacity="0"/><stop offset="1" stop-color="#57606a" stop-opacity="1"/></linearGradient>
+<linearGradient id="meteorGrad2" gradientUnits="userSpaceOnUse" x1="69.0" y1="-32.2" x2="0" y2="0"><stop offset="0" stop-color="#57606a" stop-opacity="0"/><stop offset="1" stop-color="#57606a" stop-opacity="1"/></linearGradient>
 </defs>
-<g transform="translate(296.5 351.9)"><g class="meteor" style="animation: meteor0 20.2s linear 17.5s infinite both"><line x1="-62.1" y1="31.9" x2="0" y2="0" stroke="url(#meteorGrad0)" stroke-width="1.5" stroke-linecap="round"/></g></g>
-<g transform="translate(43.9 58.8)"><g class="meteor" style="animation: meteor1 21.4s linear 1.5s infinite both"><line x1="17.2" y1="47.5" x2="0" y2="0" stroke="url(#meteorGrad1)" stroke-width="1.5" stroke-linecap="round"/></g></g>
-<g transform="translate(107.0 114.2)"><g class="meteor" style="animation: meteor2 15.6s linear 14.6s infinite both"><line x1="56.2" y1="-31.9" x2="0" y2="0" stroke="url(#meteorGrad2)" stroke-width="1.5" stroke-linecap="round"/></g></g>
+<g transform="translate(60.0 126.1)"><g class="meteor" style="animation: meteor0 19.3s linear 18.9s infinite both"><line x1="-64.6" y1="30.7" x2="0" y2="0" stroke="url(#meteorGrad0)" stroke-width="1.5" stroke-linecap="round"/></g></g>
+<g transform="translate(113.6 160.3)"><g class="meteor" style="animation: meteor1 22.7s linear 7.1s infinite both"><line x1="16.2" y1="54.6" x2="0" y2="0" stroke="url(#meteorGrad1)" stroke-width="1.5" stroke-linecap="round"/></g></g>
+<g transform="translate(39.3 236.3)"><g class="meteor" style="animation: meteor2 13.6s linear 9.7s infinite both"><line x1="69.0" y1="-32.2" x2="0" y2="0" stroke="url(#meteorGrad2)" stroke-width="1.5" stroke-linecap="round"/></g></g>
 <path d="M 15 530 L 15 528 L 30 527 L 44 525 L 58 522 L 72 518 L 86 512 L 100 504 L 114 493 L 126 482 L 138 489 L 150 478 L 162 467 L 174 477 L 186 464 L 198 480 L 210 460 L 222 474 L 234 456 L 246 480 L 258 461 L 270 487 L 282 468 L 294 494 L 308 482 L 324 491 L 340 499 L 356 506 L 372 512 L 390 515 L 420 517 L 455 513 L 490 516 L 530 510 L 575 517 L 620 511 L 668 518 L 720 512 L 774 519 L 830 514 L 888 520 L 940 516 L 970 522 L 970 530 Z" fill="#57606a"/>
 <line x1="398" y1="204" x2="398" y2="284" stroke="#c2cfde" stroke-width="2"/>
 <circle cx="398" cy="204" r="4" class="currentWorkColor"/>
@@ -69,7 +69,7 @@ text, tspan {white-space: pre;}
 <text x="390" y="30" fill="#c9d1d9">
     <tspan x="390" y="30">steven@raintrout</tspan> ——————————————————————————————————————————
     <tspan x="390" y="50" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">OS X 14, Linux, Android 17</tspan>
-    <tspan x="390" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> .................................... </tspan><tspan class="value">28y 09mo 26d</tspan>
+    <tspan x="390" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> .................................... </tspan><tspan class="value">28y 09mo 27d</tspan>
     <tspan x="390" y="90" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ....................................... </tspan><tspan class="value">Synthpop.ai</tspan>
     <tspan x="390" y="110" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> .............................. </tspan><tspan class="value">Senior AI Engineer</tspan>
     <tspan x="390" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">Alacritty, VSCode, Claude</tspan>
