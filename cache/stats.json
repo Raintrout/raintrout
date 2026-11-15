@@ -1,7 +1,7 @@
 {
   "data": {
-    "as_of": "2026-11-11",
-    "generated_at": "2026-11-11T14:27:59.171448+00:00",
+    "as_of": "2026-11-14",
+    "generated_at": "2026-11-14T13:36:20.002650+00:00",
     "monthly_miles": [
       {
         "all": 59.8,
@@ -74,43 +74,43 @@
         "walk": 4.5
       },
       {
-        "all": 18.7,
+        "all": 30.4,
         "hike": 0.0,
         "month": "2026-11",
-        "run": 6.3,
+        "run": 18.1,
         "walk": 12.3
       }
     ],
     "most_recent_activity": {
-      "date": "2026-11-09",
-      "duration_minutes": 81.0,
-      "elevation_gain_feet": 108,
-      "miles": 5.0,
-      "title": "Pleasanton Walking",
-      "type": "walk"
+      "date": "2026-11-13",
+      "duration_minutes": 60.1,
+      "elevation_gain_feet": 85,
+      "miles": 5.2,
+      "title": "Livermore - Base",
+      "type": "run"
     },
     "status": "ok",
     "year": 2026,
     "ytd": {
       "activity_counts": {
-        "all": 159,
+        "all": 161,
         "hike": 37,
-        "run": 101,
+        "run": 103,
         "walk": 17
       },
       "elevation_gain_feet": {
-        "all": 100063,
+        "all": 100266,
         "hike": 57652,
-        "run": 19908,
+        "run": 20111,
         "walk": 1365
       },
       "miles": {
-        "all": 1133.4,
+        "all": 1145.2,
         "hike": 246.8,
-        "run": 748.6,
+        "run": 760.3,
         "walk": 73.7
       }
     }
   },
-  "timestamp": "2026-11-12T12:00:16.424788+00:00"
+  "timestamp": "2026-11-15T11:41:06.883335+00:00"
 }
